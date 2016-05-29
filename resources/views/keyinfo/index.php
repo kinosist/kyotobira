@@ -23,8 +23,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="/LockInfoes">錠管理</a></li>
-                    <li><a href="/KeyInfoes2">鍵管理</a></li>
+                    <li><a href="/lockinfo">錠管理</a></li>
+                    <li><a href="/keyinfo">鍵管理</a></li>
                     <li><a href="/KeyLogs">ログ</a></li>
                 </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -42,7 +42,7 @@
 <h2>鍵管理 - 一覧</h2> 
 
 <p>
-    <a href="/KeyInfoes2/Create">Create New</a>
+    <a href="/keyinfo/create">Create New</a>
 </p>
 <table class="table">
     <tr>
@@ -111,9 +111,9 @@
             
         </td>
         <td>
-            <a href="/KeyInfoes2/Edit/1">Edit</a> |
-            <a href="/KeyInfoes2/Details/1">Details</a> |
-            <a href="/KeyInfoes2/Delete/1">Delete</a>
+            <a href="/keyinfo/ddit/1">Edit</a> |
+            <a href="/keyinfo/details/1">Details</a> |
+            <a href="/keyinfo/delete/1">Delete</a>
         </td>
     </tr>
     <tr>
@@ -148,9 +148,9 @@
             
         </td>
         <td>
-            <a href="/KeyInfoes2/Edit/2">Edit</a> |
-            <a href="/KeyInfoes2/Details/2">Details</a> |
-            <a href="/KeyInfoes2/Delete/2">Delete</a>
+            <a href="/keyinfo/edit/2">Edit</a> |
+            <a href="/keyinfo/details/2">Details</a> |
+            <a href="/keyinfo/delete/2">Delete</a>
         </td>
     </tr>
     <tr>
@@ -185,9 +185,9 @@
             
         </td>
         <td>
-            <a href="/KeyInfoes2/Edit/3">Edit</a> |
-            <a href="/KeyInfoes2/Details/3">Details</a> |
-            <a href="/KeyInfoes2/Delete/3">Delete</a>
+            <a href="/keyinfo/edit/3">Edit</a> |
+            <a href="/keyinfo/details/3">Details</a> |
+            <a href="/keyinfo/delete/3">Delete</a>
         </td>
     </tr>
 
@@ -199,10 +199,10 @@
         </footer>
     </div>
 
-    <script src="Scripts/jquery-1.10.2.js"></script>
-    <script src="Scripts/bootstrap.js"></script>
-    <script src="Scripts/bootstrap-datepicker.js"></script>
-    <script src="Scripts/respond.js"></script>
-    <script src="Scripts/app.js"></script>
+    <script src="/scripts/jquery-1.10.2.js"></script>
+    <script src="/scripts/bootstrap.js"></script>
+    <script src="/scripts/bootstrap-datepicker.js"></script>
+    <script src="/scripts/respond.js"></script>
+    <script src="/scripts/app.js"></script>
 </body>
 </html>

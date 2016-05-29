@@ -23,8 +23,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="/LockInfoes">錠管理</a></li>
-                    <li><a href="/KeyInfoes2">鍵管理</a></li>
+                    <li><a href="/lockinfo">錠管理</a></li>
+                    <li><a href="/keyinfo">鍵管理</a></li>
                     <li><a href="/KeyLogs">ログ</a></li>
                 </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -41,7 +41,7 @@
 
 <h2>錠管理 - 編集</h2>
 
-<form action="/LockInfoes/Edit/1" method="post"><input name="__RequestVerificationToken" type="hidden" value="ukEMtODNwUda1bK-ZZpX393vTkMbsAA5v1Q7jzPj9ynnJj-u20JW0tYwl2otqxXMK5vIKkui_F-fVrRsNdvCCLNZ2CoeRxCLtv7MIucUKqU1" />    <div class="form-horizontal">
+<form action="/lockinfo/Edit/1" method="post"><input name="__RequestVerificationToken" type="hidden" value="ukEMtODNwUda1bK-ZZpX393vTkMbsAA5v1Q7jzPj9ynnJj-u20JW0tYwl2otqxXMK5vIKkui_F-fVrRsNdvCCLNZ2CoeRxCLtv7MIucUKqU1" />    <div class="form-horizontal">
         <hr />
         
         <input data-val="true" data-val-number="フィールド Id には数字を指定してください。" data-val-required="Id フィールドが必要です。" id="Id" name="Id" type="hidden" value="1" />
@@ -108,7 +108,7 @@
     </div>
 </form>
 <div>
-    <a href="/LockInfoes">Back to List</a>
+    <a href="/lockinfo">Back to List</a>
 </div>
 
         <hr />

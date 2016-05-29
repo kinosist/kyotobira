@@ -23,8 +23,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="/LockInfoes">錠管理</a></li>
-                    <li><a href="/KeyInfoes2">鍵管理</a></li>
+                    <li><a href="/lockinfo">錠管理</a></li>
+                    <li><a href="/keyinfo">鍵管理</a></li>
                     <li><a href="/KeyLogs">ログ</a></li>
                 </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -41,7 +41,7 @@
 
 <h2>鍵管理 - 編集</h2>
 
-<form action="/KeyInfoes2/Edit/1" method="post"><input name="__RequestVerificationToken" type="hidden" value="_VYrq12qe3NUe3wH_DoPsbxI1HoIvvRgp70QC-v-v6FajE23nEI60ipyTlBmZ98StuAsUBfwDSg_yBdAnqKbEDnUQetps7QIA_g4nsC7SWQ1" />    <div class="form-horizontal">
+<form action="/keyinfo/edit/1" method="post"><input name="__RequestVerificationToken" type="hidden" value="_VYrq12qe3NUe3wH_DoPsbxI1HoIvvRgp70QC-v-v6FajE23nEI60ipyTlBmZ98StuAsUBfwDSg_yBdAnqKbEDnUQetps7QIA_g4nsC7SWQ1" />    <div class="form-horizontal">
         <h4>KeyInfo</h4>
         <hr />
         
@@ -112,7 +112,7 @@
     </div>
 </form>
 <div>
-    <a href="/KeyInfoes2">Back to List</a>
+    <a href="/keyinfo">Back to List</a>
 </div>
 
         <hr />
