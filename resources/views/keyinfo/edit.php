@@ -121,10 +121,10 @@
         </footer>
     </div>
 
-    <script src="Scripts/jquery-1.10.2.js"></script>
-    <script src="Scripts/bootstrap.js"></script>
-    <script src="Scripts/bootstrap-datepicker.js"></script>
-    <script src="Scripts/respond.js"></script>
-    <script src="Scripts/app.js"></script>
+    <script src="/scripts/jquery-1.10.2.js"></script>
+    <script src="/scripts/bootstrap.js"></script>
+    <script src="/scripts/bootstrap-datepicker.js"></script>
+    <script src="/scripts/respond.js"></script>
+    <script src="/scripts/app.js"></script>
 </body>
 </html>
