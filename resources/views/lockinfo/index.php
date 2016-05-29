@@ -23,8 +23,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="/LockInfo">錠管理</a></li>
-                    <li><a href="/KeyInfo">鍵管理</a></li>
+                    <li><a href="/lockinfo">錠管理</a></li>
+                    <li><a href="/keyinfo">鍵管理</a></li>
                     <li><a href="/KeyLogs">ログ</a></li>
                 </ul>
                     <ul class="nav navbar-nav navbar-right">

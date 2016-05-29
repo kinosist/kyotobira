@@ -17,14 +17,17 @@ class KeyInfoController extends Controller
     public function create()
     {
         //
+	return view('keyinfo.create');
     }
     public function edit()
     {
         //
+	return view('keyinfo.edit');
     }
     public function delete()
     {
         //
+	return view('keyinfo.delete');
     }
 
 
