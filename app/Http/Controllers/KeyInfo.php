@@ -15,7 +15,7 @@ class KeyInfoController extends Controller
         $keyinfoss = KeyInfo::all();
         return view('keyinfo.index', ['articles' => $articles];
     }
-...
+
     public function destroy($id)
     {
         $keyinfo = KeyInfo::find($id);
