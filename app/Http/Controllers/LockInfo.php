@@ -15,7 +15,7 @@ class LockInfoController extends Controller
         $lockinfos = LockInfo::all();
         return view('lockinfo.index', ['articles' => $articles];
     }
-...
+
     public function destroy($id)
     {
         $lockinfo = LockInfo::find($id);

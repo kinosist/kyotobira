@@ -18,4 +18,6 @@ Route::group(['middleware' => ['web']], function () {
 Route::get('/keyinfo/', 'KeyInfoController@index');
 Route::post('/keyinfo/create', 'KeyInfoController@create');
 Route::delete('/keyinfo/delete', 'KeyInfoController@delete');
+Route::get('/old/', function () {
+    return view('old.button');
 });
