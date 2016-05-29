@@ -6,9 +6,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>錠管理 - 一覧 - スマート京とびら</title>
-    <link href="Content/bootstrap.css" rel="stylesheet"/>
-    <link href="Content/site.css" rel="stylesheet"/>
-    <script src="Scripts/modernizr-2.6.2.js"></script>
+    <link href="/content/bootstrap.css" rel="stylesheet"/>
+    <link href="/content/site.css" rel="stylesheet"/>
+    <script src="/scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -23,8 +23,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="/LockInfoes">錠管理</a></li>
-                    <li><a href="/KeyInfoes2">鍵管理</a></li>
+                    <li><a href="/LockInfo">錠管理</a></li>
+                    <li><a href="/KeyInfo">鍵管理</a></li>
                     <li><a href="/KeyLogs">ログ</a></li>
                 </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -42,7 +42,7 @@
 <h2>錠管理 - 一覧</h2>
 
 <p>
-    <a href="/LockInfoes/Create">Create New</a>
+    <a href="/lockinfo/create">Create New</a>
 </p>
 <table class="table">
     <tr>
@@ -111,9 +111,9 @@
             
         </td>
         <td>
-            <a href="/LockInfoes/Edit/1">Edit</a> |
-            <a href="/LockInfoes/Details/1">Details</a> |
-            <a href="/LockInfoes/Delete/1">Delete</a>
+            <a href="/lockinfo/edit/1">Edit</a> |
+            <a href="/lockinfoes/details/1">Details</a> |
+            <a href="/lockinfoes/delete/1">Delete</a>
         </td>
     </tr>
     <tr>
@@ -148,9 +148,9 @@
             
         </td>
         <td>
-            <a href="/LockInfoes/Edit/2">Edit</a> |
-            <a href="/LockInfoes/Details/2">Details</a> |
-            <a href="/LockInfoes/Delete/2">Delete</a>
+            <a href="/lockinfo/edit/2">Edit</a> |
+            <a href="/lockinfo/details/2">Details</a> |
+            <a href="/lockinfo/delete/2">Delete</a>
         </td>
     </tr>
     <tr>
@@ -185,9 +185,9 @@
             
         </td>
         <td>
-            <a href="/LockInfoes/Edit/3">Edit</a> |
-            <a href="/LockInfoes/Details/3">Details</a> |
-            <a href="/LockInfoes/Delete/3">Delete</a>
+            <a href="/lockinfo/edit/3">Edit</a> |
+            <a href="/lockinfo/details/3">Details</a> |
+            <a href="/lockinfo/delete/3">Delete</a>
         </td>
     </tr>
 

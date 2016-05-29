@@ -6,9 +6,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>錠管理 - 編集 - スマート京とびら</title>
-    <link href="Content/bootstrap.css" rel="stylesheet"/>
-    <link href="Content/site.css" rel="stylesheet"/>
-    <script src="Scripts/modernizr-2.6.2.js"></script>
+    <link href="/content/bootstrap.css" rel="stylesheet"/>
+    <link href="/content/site.css" rel="stylesheet"/>
+    <script src="/scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">

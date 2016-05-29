@@ -21,6 +21,7 @@ Route::delete('/keyinfo/delete', 'KeyInfoController@delete');
 Route::get('/lockinfo/', 'LockInfoController@index');
 Route::post('/lockinfo/create', 'LockInfoController@create');
 Route::delete('/lockinfo/delete', 'LockInfoController@delete');
+});
 Route::get('/old/', function () {
     return view('old.button');
 });
