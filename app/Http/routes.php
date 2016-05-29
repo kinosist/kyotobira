@@ -16,10 +16,12 @@ Route::get('/', function () {
 });
 Route::group(['middleware' => ['web']], function () {
 Route::get('/keyinfo/', 'KeyInfoController@index');
-Route::post('/keyinfo/create', 'KeyInfoController@create');
+Route::get('/keyinfo/create', 'KeyInfoController@create');
+Route::get('/keyinfo/edit', 'KeyInfoController@edit');
 Route::delete('/keyinfo/delete', 'KeyInfoController@delete');
 Route::get('/lockinfo/', 'LockInfoController@index');
-Route::post('/lockinfo/create', 'LockInfoController@create');
+Route::get('/lockinfo/create', 'LockInfoController@create');
+Route::get('/lockinfo/edit', 'LockInfoController@edit');
 Route::delete('/lockinfo/delete', 'LockInfoController@delete');
 });
 Route::get('/old/', function () {
