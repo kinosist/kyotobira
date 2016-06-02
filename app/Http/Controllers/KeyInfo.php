@@ -13,7 +13,7 @@ class KeyInfoController extends Controller
     public function index()
     {
         $keyinfoss = KeyInfo::all();
-        return view('keyinfo.index', ['articles' => $articles];
+        return view('keyinfo.index', ['articles' => $articles]);
     }
 
     public function destroy($id)

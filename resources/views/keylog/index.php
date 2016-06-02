@@ -6,9 +6,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index - スマート京とびら</title>
-    <link href="Content/bootstrap.css" rel="stylesheet"/>
-    <link href="Content/site.css" rel="stylesheet"/>
-    <script src="Scripts/modernizr-2.6.2.js"></script>
+    <link href="/content/bootstrap.css" rel="stylesheet"/>
+    <link href="/content/site.css" rel="stylesheet"/>
+    <script src="/scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -47,8 +47,8 @@
     <input type="text" name="UserName" class="form-control" placeholder="使用者名" />
     <label class="control-label" for="MaterialClassificationId">鍵の状態</label>
     <select class="form-control" id="MaterialClassificationId" name="MaterialClassificationId"><option value=""></option>
-        <option value="1">開けた</option>
-        <option value="0">閉めた</option>
+        <option value="1">開</option>
+        <option value="0">閉</option>
     </select>
     <input type="submit" value="検索" />
 </form>
@@ -122,41 +122,6 @@
             <a href="/KeyLogs/Delete/1">Delete</a>
         </td>
     </tr>
-    <tr>
-        <td>
-            ハウス
-        </td>
-        <td>
-            12345
-        </td>
-        <td>
-            test1
-        </td>
-        <td>
-            0
-        </td>
-        <td>
-            35.009983、135.759547
-        </td>
-        <td>
-            2016/05/19 00:00
-        </td>
-        <td>
-            2016/05/19 00:00
-        </td>
-        <td>
-            kino
-        </td>
-        <td>
-            kino
-        </td>
-        <td>
-            <a href="/KeyLogs/Edit/2">Edit</a> |
-            <a href="/KeyLogs/Details/2">Details</a> |
-            <a href="/KeyLogs/Delete/2">Delete</a>
-        </td>
-    </tr>
-
 </table>
 
         <hr />
@@ -165,10 +130,10 @@
         </footer>
     </div>
 
-    <script src="Scripts/jquery-1.10.2.js"></script>
-    <script src="Scripts/bootstrap.js"></script>
-    <script src="Scripts/bootstrap-datepicker.js"></script>
-    <script src="Scripts/respond.js"></script>
-    <script src="Scripts/app.js"></script>
+    <script src="/scripts/jquery-1.10.2.js"></script>
+    <script src="/scripts/bootstrap.js"></script>
+    <script src="/scripts/bootstrap-datepicker.js"></script>
+    <script src="/scripts/respond.js"></script>
+    <script src="/scripts/app.js"></script>
 </body>
 </html>
