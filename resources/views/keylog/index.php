@@ -117,9 +117,7 @@
             kino
         </td>
         <td>
-            <a href="/KeyLogs/Edit/1">Edit</a> |
-            <a href="/KeyLogs/Details/1">Details</a> |
-            <a href="/KeyLogs/Delete/1">Delete</a>
+            <a href="/keylogs/Delete/1">Delete</a>
         </td>
     </tr>
 </table>
