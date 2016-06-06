@@ -41,7 +41,7 @@
 
 <h2>ログ管理 - 一覧</h2>
 
-<form action="/Materials/Search" class="well form-inline" method="post"><input name="__RequestVerificationToken" type="hidden" value="WeKONrhe4Bcy_PcuI8l7Xbm1UnB3_FKllpf4DQe1NCl21E96CVxvisJ54ln_Qh5fxBJbaBE1z2_Jh5-vrYp-I8ZBBFBHpomfcrnjjYvxQVAB1QB6Qp6bI-V0pgsiIkwVkZlcX_ZMqUEuLhi6D_W4BQ2" />
+<form action="/keylog/" class="well form-inline" method="post"><input name="__RequestVerificationToken" type="hidden" value="{{Form::token();}}" />
     <input type="text" name="Name" class="form-control" placeholder="名前" />
     <input type="text" name="KeyCode" class="form-control" placeholder="鍵ID" />
     <input type="text" name="UserName" class="form-control" placeholder="使用者名" />
@@ -53,9 +53,7 @@
     <input type="submit" value="検索" />
 </form>
 
-<p>
-    <a href="/KeyLogs/Create">Create New</a>
-</p>
+
 <table class="table">
     <tr>
         <th>
@@ -87,39 +85,44 @@
         </th>
         <th></th>
     </tr>
-
+<?php
+	foreach($loglist as $log){
+?>
     <tr>
         <td>
-            川沿いリバーサイド玄関
+            <?php print $log["keyname"]; ?>
         </td>
         <td>
-            qwerty
+            <?php print $log["keyid"]; ?>
         </td>
         <td>
-            kinomaster
+            <?php print $log["username"]; ?>
         </td>
         <td>
-            1
+            <?php print ( $log["lock_status"]==1 ? "開" : "閉"); ?>
         </td>
         <td>
-            35.009983、135.759547
+            <?php print $log["place"]; ?>
         </td>
         <td>
-            2016/05/19 00:00
+            <?php print $log["regdate"]; ?>
         </td>
         <td>
-            2016/05/19 00:00
+            <?php print $log["upddate"]; ?>
         </td>
         <td>
-            kino
+            <?php print $log["reg_person"]; ?>
         </td>
         <td>
-            kino
+            <?php print $log["upd_person"]; ?>
         </td>
         <td>
-            <a href="/keylogs/Delete/1">Delete</a>
+            <a class="dellink" href="/keylog/delete/1">Delete</a>
         </td>
     </tr>
+<?php
+	}
+?>
 </table>
 
         <hr />
@@ -127,11 +130,21 @@
             <p>&copy; 2016 - スマート京とびら</p>
         </footer>
     </div>
-
     <script src="/scripts/jquery-1.10.2.js"></script>
     <script src="/scripts/bootstrap.js"></script>
     <script src="/scripts/bootstrap-datepicker.js"></script>
     <script src="/scripts/respond.js"></script>
     <script src="/scripts/app.js"></script>
+    <script>
+		$(document).ready(function(){
+			$('.dellink').click(function(){
+				if( confirm('削除します。よろしいでしょうか？')==false ){
+					return false;
+				}
+				
+			});
+			
+		});
+    </script>
 </body>
 </html>
