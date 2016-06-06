@@ -16,6 +16,27 @@ class KeyLogController extends Controller
         $loglist = KeyLog::all();
 		return view('keylog.index')->with('loglist',$loglist);
     }
+    public function search()
+    {
+        //
+        $keyname = Input::get('keyname');
+        $keyid = Input::get('keyid');
+        $username = Input::get('username');
+        $lock_status = Input::get('lock_status');
+
+		$query = KeyLog::query();
+		$query->where('keyname',$keyname);
+		$query->where('keyid',$keyid);
+		$query->where('username',$username);
+		$query->where('lock_status',$lock_status);
+
+		$members = $query->paginate(30);
+		return view('keylog.index')->with('loglist',$loglist)->with('keyname',$keyname)->with('keyid',$keyid)
+		->with('username',$username)->with('lock_status',$lock_status);
+    }
+    
+    
+    
     public function create()
     {
         //

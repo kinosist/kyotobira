@@ -41,12 +41,12 @@
 
 <h2>ログ管理 - 一覧</h2>
 
-<form action="/keylog/" class="well form-inline" method="post"><input name="__RequestVerificationToken" type="hidden" value="{{Form::token();}}" />
-    <input type="text" name="Name" class="form-control" placeholder="名前" />
-    <input type="text" name="KeyCode" class="form-control" placeholder="鍵ID" />
-    <input type="text" name="UserName" class="form-control" placeholder="使用者名" />
+<form action="/keylog/" class="well form-inline" method="post"><input name="__RequestVerificationToken" type="hidden" value="<?php echo csrf_token(); ?>" />
+    <input type="text" name="keyname" class="form-control" placeholder="名前" />
+    <input type="text" name="keyid" class="form-control" placeholder="鍵ID" />
+    <input type="text" name="username" class="form-control" placeholder="使用者名" />
     <label class="control-label" for="MaterialClassificationId">鍵の状態</label>
-    <select class="form-control" id="MaterialClassificationId" name="MaterialClassificationId"><option value=""></option>
+    <select class="form-control" id="MaterialClassificationId" name="lock_status"><option value=""></option>
         <option value="1">開</option>
         <option value="0">閉</option>
     </select>

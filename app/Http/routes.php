@@ -24,6 +24,7 @@ Route::get('/lockinfo/create', 'LockInfoController@create');
 Route::get('/lockinfo/edit', 'LockInfoController@edit');
 Route::delete('/lockinfo/delete', 'LockInfoController@delete');
 Route::get('/keylog/', 'KeyLogController@index');
+Route::post('/keylog/', 'KeyLogController@search');
 });
 Route::get('/old/', function () {
     return view('old.button');
