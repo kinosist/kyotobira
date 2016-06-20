@@ -14,11 +14,13 @@ class KeyLogController extends Controller
     {
         //
         $loglist = KeyLog::all();
-		return view('keylog.index')->with('loglist',$loglist);
+		return view('keylog.index')->with('loglist',$loglist)->with('keyname',"")->with('keyid',"")
+		->with('username',"")->with('lock_status',"");
     }
     public function search()
     {
         //
+        print_r(Input);exit;
         $keyname = Input::get('keyname');
         $keyid = Input::get('keyid');
         $username = Input::get('username');
@@ -30,12 +32,10 @@ class KeyLogController extends Controller
 		$query->where('username',$username);
 		$query->where('lock_status',$lock_status);
 
-		$members = $query->paginate(30);
+		$loglist = $query->paginate(30);
 		return view('keylog.index')->with('loglist',$loglist)->with('keyname',$keyname)->with('keyid',$keyid)
 		->with('username',$username)->with('lock_status',$lock_status);
     }
-    
-    
     
     public function create()
     {
