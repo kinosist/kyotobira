@@ -24,9 +24,10 @@ Route::get('/lockinfo/create', 'LockInfoController@create');
 Route::get('/lockinfo/edit', 'LockInfoController@edit');
 Route::delete('/lockinfo/delete', 'LockInfoController@delete');
 Route::get('/keylog/', 'KeyLogController@index');
-Route::post('/keylog/', 'KeyLogController@search');
+Route::post('/keylog/search', 'KeyLogController@search');
 Route::get('/locking/', 'LockingController@index');
-Route::post('/locking/', 'LockingController@locking');
+Route::post('/locking/on', 'LockingController@locking');
+Route::post('/locking/off', 'LockingController@unlocking');
 });
 Route::get('/old/', function () {
     return view('old.button');
