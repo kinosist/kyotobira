@@ -41,7 +41,7 @@
 
 <h2>ログ管理 - 一覧</h2>
 
-<form action="/keylog/" class="well form-inline" method="post"><input name="__RequestVerificationToken" type="hidden" value="<?php echo csrf_token(); ?>" />
+<form action="/keylog/search" class="well form-inline" method="post"><input name="__RequestVerificationToken" type="hidden" value="<?php echo csrf_token(); ?>" />
     <input type="text" name="keyname" class="form-control" placeholder="名前" value="<?php print $keyname; ?>" />
     <input type="text" name="keyid" class="form-control" placeholder="鍵ID" value="<?php print $keyid; ?>" />
     <input type="text" name="username" class="form-control" placeholder="使用者名" value="<?php print $username; ?>" />

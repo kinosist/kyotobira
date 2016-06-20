@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\KeyLog;
-	
+
 class KeyLogController extends Controller
 {
     //
@@ -17,14 +17,13 @@ class KeyLogController extends Controller
 		return view('keylog.index')->with('loglist',$loglist)->with('keyname',"")->with('keyid',"")
 		->with('username',"")->with('lock_status',"");
     }
-    public function search()
+    public function search(Request $request)
     {
         //
-        print_r(Input);exit;
-        $keyname = Input::get('keyname');
-        $keyid = Input::get('keyid');
-        $username = Input::get('username');
-        $lock_status = Input::get('lock_status');
+        $keyname = $request->input('keyname');
+        $keyid = $request->input('keyid');
+        $username = $request->input('username');
+        $lock_status = $request->input('lock_status');
 
 		$query = KeyLog::query();
 		$query->where('keyname',$keyname);
