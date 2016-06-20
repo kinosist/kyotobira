@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\KeyInfo;
 
 class KeyInfoController extends Controller
 {
@@ -12,7 +13,9 @@ class KeyInfoController extends Controller
     public function index()
     {
         //
-	return view('keyinfo.index');
+		$query = KeyInfo::query();
+		$keyinfolist = $query->paginate(30);
+		return view('keyinfo.index')->with('keyinfolist',$keyinfolist);
     }
     public function create()
     {

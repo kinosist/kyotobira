@@ -25,11 +25,11 @@
                 <ul class="nav navbar-nav">
                     <li><a href="/lockinfo">錠管理</a></li>
                     <li><a href="/keyinfo">鍵管理</a></li>
-                    <li><a href="/KeyLogs">ログ</a></li>
+                    <li><a href="/keylog">ログ</a></li>
                 </ul>
                     <ul class="nav navbar-nav navbar-right">
-        <li><a href="/Account/Register" id="registerLink">登録</a></li>
-        <li><a href="/Account/Login" id="loginLink">ログイン</a></li>
+        <li><a href="/account/register" id="registerLink">登録</a></li>
+        <li><a href="/account/login" id="loginLink">ログイン</a></li>
     </ul>
 
             </div>
@@ -41,14 +41,16 @@
 
 <h2>鍵管理 - 新規登録</h2>
 
-<form action="/keyinfo/create" method="post"><input name="__RequestVerificationToken" type="hidden" value="WOdtim6xiPTKdpv0K9iNsSQy94H2ge-QhZIBzEuQxDopjw52gsaMPwUvUWD7XilWVA8cMq4qjgsk9OLXM4Q1GJDiB72goOdefp1OoW7cQSE1" />    <div class="form-horizontal">
+<form action="/keyinfo/create" method="post">
+		<input name="_token" type="hidden" value="<?php echo csrf_token(); ?>" />
+	    <div class="form-horizontal">
         <hr />
         
         <div class="form-group">
             <label class="control-label col-md-2" for="Enable">有効</label>
             <div class="col-md-10">
                 <div class="checkbox">
-                    <input class="check-box" data-val="true" data-val-required="有効 フィールドが必要です。" id="Enable" name="Enable" type="checkbox" value="true" /><input name="Enable" type="hidden" value="false" />
+                    <input class="check-box" data-val="true" data-val-required="有効 フィールドが必要です。" id="Enable" name="enabled" type="checkbox" value="true" /><input name="enabled" type="hidden" value="false" />
                     <span class="field-validation-valid text-danger" data-valmsg-for="Enable" data-valmsg-replace="true"></span>
                 </div>
             </div>
@@ -57,7 +59,7 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="KeyCode">鍵ID</label>
             <div class="col-md-10">
-                <input class="form-control text-box single-line" data-val="true" data-val-required="鍵IDは必須です。" id="KeyCode" name="KeyCode" type="text" value="" />
+                <input class="form-control text-box single-line" data-val="true" data-val-required="鍵IDは必須です。" id="keyid" name="keyid" type="text" value="" />
                 <span class="field-validation-valid text-danger" data-valmsg-for="KeyCode" data-valmsg-replace="true"></span>
             </div>
         </div>
@@ -89,10 +91,11 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="LockInfoId">LockInfoId</label>
             <div class="col-md-10">
-                <select class="form-control" id="LockInfoId" name="LockInfoId"><option value="1">川沿いリバーサイド玄関</option>
-<option value="2">ハウス</option>
-<option value="3">川沿いリバーサイド裏口</option>
-</select>
+                <select class="form-control" id="LockInfoId" name="LockInfoId">
+            	<option value="1">川沿いリバーサイド玄関</option>
+				<option value="2">ハウス</option>
+				<option value="3">川沿いリバーサイド裏口</option>
+				</select>
                 <span class="field-validation-valid text-danger" data-valmsg-for="LockInfoId" data-valmsg-replace="true"></span>
             </div>
         </div>

@@ -13,9 +13,14 @@ class KeyLogController extends Controller
     public function index()
     {
         //
-        $loglist = KeyLog::all();
-		return view('keylog.index')->with('loglist',$loglist)->with('keyname',"")->with('keyid',"")
-		->with('username',"")->with('lock_status',"");
+//        $loglist = KeyLog::all();
+		$query = KeyLog::query();
+		$loglist = $query->paginate(30);
+        $keyname = "";
+        $keyid = "";
+        $username = "";
+        $lock_status = "";
+		return view('keylog.index')->with(['loglist'=>$loglist,'keyname'=>$keyname,'keyid'=>$keyid,'username'=>$username,'lock_status'=>$lock_status]);
     }
     public function search(Request $request)
     {
@@ -25,15 +30,24 @@ class KeyLogController extends Controller
         $username = $request->input('username');
         $lock_status = $request->input('lock_status');
 
+		logger($lock_status);
+
 		$query = KeyLog::query();
-		$query->where('keyname',$keyname);
-		$query->where('keyid',$keyid);
-		$query->where('username',$username);
-		$query->where('lock_status',$lock_status);
+		if( $keyname ){
+			$query->where('keyname','like','%'.$keyname.'%');
+		}
+		if( $keyid ){
+			$query->where('keyid','like','%'.$keyid.'%');
+		}
+		if( $username ){
+			$query->where('username','like','%'.$username.'%');
+		}
+		if( $lock_status ){
+			$query->where('lock_status',$lock_status);
+		}
 
 		$loglist = $query->paginate(30);
-		return view('keylog.index')->with('loglist',$loglist)->with('keyname',$keyname)->with('keyid',$keyid)
-		->with('username',$username)->with('lock_status',$lock_status);
+		return view('keylog.index')->with(['loglist'=>$loglist,'keyname'=>$keyname,'keyid'=>$keyid,'username'=>$username,'lock_status'=>$lock_status]);
     }
     
     public function create()
@@ -46,10 +60,20 @@ class KeyLogController extends Controller
         //
 		return view('keylog.edit');
     }
-    public function delete()
+    public function delete($id)
     {
         //
-		return view('keylog.delete');
+        
+        KeyLog::destroy($id);
+
+		$query = KeyLog::query();
+		$loglist = $query->paginate(30);
+
+        $keyname = "";
+        $keyid = "";
+        $username = "";
+        $lock_status = "";
+		return view('keylog.index')->with(['loglist'=>$loglist,'keyname'=>$keyname,'keyid'=>$keyid,'username'=>$username,'lock_status'=>$lock_status]);
     }
 
 
