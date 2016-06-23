@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\LockInfo;
 
 class LockInfoController extends Controller
 {
@@ -12,7 +13,9 @@ class LockInfoController extends Controller
     public function index()
     {
         //
-	return view('lockinfo.index');
+		$query = LockInfo::query();
+		$lockinfolist = $query->paginate(30);
+		return view('lockinfo.index')->with('lockinfolist',$lockinfolist);
     }
     public function create()
     {
