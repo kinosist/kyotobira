@@ -30,6 +30,7 @@ return [
 
     'providers' => [
         //
+	\Ytake\LaravelSmarty\SmartyCompileServiceProvider::class
     ],
 
 ];

@@ -23,13 +23,13 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="/LockInfoes">錠管理</a></li>
-                    <li><a href="/KeyInfoes2">鍵管理</a></li>
-                    <li><a href="/KeyLogs">ログ</a></li>
+                    <li><a href="/lockinfo">錠管理</a></li>
+                    <li><a href="/keyinfo">鍵管理</a></li>
+                    <li><a href="/keylog">ログ</a></li>
                 </ul>
                     <ul class="nav navbar-nav navbar-right">
-        <li><a href="/Account/Register" id="registerLink">登録</a></li>
-        <li><a href="/Account/Login" id="loginLink">ログイン</a></li>
+        <li><a href="/account/register" id="registerLink">登録</a></li>
+        <li><a href="/account/login" id="loginLink">ログイン</a></li>
     </ul>
 
             </div>
@@ -42,13 +42,14 @@
 <h2>ログ管理 - 一覧</h2>
 
 <form action="/keylog/search" class="well form-inline" method="post"><input name="_token" type="hidden" value="<?php echo csrf_token(); ?>" />
-    <input type="text" name="keyname" class="form-control" placeholder="名前" value="" />
-    <input type="text" name="keyid" class="form-control" placeholder="鍵ID" value="" />
-    <input type="text" name="username" class="form-control" placeholder="使用者名" value="" />
+    <input type="text" name="keyname" class="form-control" placeholder="名前" value="<?php print $keyname; ?>" />
+    <input type="text" name="keyid" class="form-control" placeholder="鍵ID" value="<?php print $keyid; ?>" />
+    <input type="text" name="username" class="form-control" placeholder="使用者名" value="<?php print $username; ?>" />
     <label class="control-label" for="MaterialClassificationId">鍵の状態</label>
-    <select class="form-control" id="MaterialClassificationId" name="lock_status"><option value=""></option>
-        <option value="1">開</option>
-        <option value="0">閉</option>
+    <select class="form-control" id="MaterialClassificationId" name="lock_status">
+    	<option value="" <?php if( trim($lock_status)=="" ): ?>selected=""<?php endif; ?>></option>
+        <option value="1" <?php if( trim($lock_status)==1 ): ?>selected=""<?php endif; ?>>開</option>
+        <option value="2" <?php if( trim($lock_status)==2 ): ?>selected=""<?php endif; ?>>閉</option>
     </select>
     <input type="submit" value="検索" />
 </form>
@@ -117,7 +118,7 @@
             <?php print $log["upd_person"]; ?>
         </td>
         <td>
-            <a class="dellink" href="/keylog/delete/1">Delete</a>
+            <a class="dellink" href="/keylog/delete/<?php print $log["id"]; ?>">Delete</a>
         </td>
     </tr>
 <?php

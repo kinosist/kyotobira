@@ -17,14 +17,15 @@ Route::get('/', function () {
 Route::group(['middleware' => ['web']], function () {
 Route::get('/keyinfo/', 'KeyInfoController@index');
 Route::get('/keyinfo/create', 'KeyInfoController@create');
-Route::get('/keyinfo/edit', 'KeyInfoController@edit');
-Route::delete('/keyinfo/delete', 'KeyInfoController@delete');
+Route::get('/keyinfo/edit/{id}', 'KeyInfoController@edit');
+Route::get('/keyinfo/delete/{id}', 'KeyInfoController@delete');
 Route::get('/lockinfo/', 'LockInfoController@index');
 Route::get('/lockinfo/create', 'LockInfoController@create');
-Route::get('/lockinfo/edit', 'LockInfoController@edit');
-Route::delete('/lockinfo/delete', 'LockInfoController@delete');
+Route::get('/lockinfo/edit/{id}', 'LockInfoController@edit');
+Route::get('/lockinfo/delete/{id}', 'LockInfoController@delete');
 Route::get('/keylog/', 'KeyLogController@index');
 Route::post('/keylog/search', 'KeyLogController@search');
+Route::get('/keylog/delete/{id}', 'KeyLogController@delete');
 Route::get('/locking/', 'LockingController@index');
 Route::post('/locking/on', 'LockingController@locking');
 Route::post('/locking/off', 'LockingController@unlocking');
