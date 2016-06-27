@@ -20,12 +20,15 @@ class LockInfoController extends Controller
     public function create()
     {
         //
-	return view('lockinfo.create');
+		return view('lockinfo.create');
     }
     public function postcreate()
     {
+    	
+    	$inputs = \Request::all();
+    	LockInfo::create($inputs);
         //
-	return view('lockinfo.create');
+		return view('lockinfo.create');
     }
     public function edit()
     {

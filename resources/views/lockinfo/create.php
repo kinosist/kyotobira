@@ -41,14 +41,14 @@
 
 <h2>錠管理 - 登録</h2>
 
-<form action="/lockinfo/Create" method="post"><input name="__RequestVerificationToken" type="hidden" value="sJIWPccISt9XNTw-x0ww632UKGVy-NC6hLNXyaV32FdalOIU01mYTA_7SS5UbnvsdEIjv2wuL5GeaVdHnquyWJIBnokjWIdyBOrmdINQb8E1" />    <div class="form-horizontal">
+<form action="/lockinfo/create" method="post"><input name="_token" type="hidden" value="<?php echo csrf_token(); ?>" />    <div class="form-horizontal">
         <hr />
         
         <div class="form-group">
             <label class="control-label col-md-2" for="Enable">有効</label>
             <div class="col-md-10">
                 <div class="checkbox">
-                    <input class="check-box" data-val="true" data-val-required="有効 フィールドが必要です。" id="Enable" name="Enable" type="checkbox" value="true" /><input name="Enable" type="hidden" value="false" />
+                    <input class="check-box" data-val="true" data-val-required="有効 フィールドが必要です。" id="Enable" name="enabled" type="checkbox" value="true" /><input name="Enable" type="hidden" value="false" />
                     <span class="field-validation-valid text-danger" data-valmsg-for="Enable" data-valmsg-replace="true"></span>
                 </div>
             </div>
@@ -57,7 +57,7 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="Name">名前</label>
             <div class="col-md-10">
-                <input class="form-control text-box single-line" data-val="true" data-val-required="名前は必須です。" id="Name" name="Name" type="text" value="" />
+                <input class="form-control text-box single-line" data-val="true" data-val-required="名前は必須です。" id="Name" name="lockname" type="text" value="" />
                 <span class="field-validation-valid text-danger" data-valmsg-for="Name" data-valmsg-replace="true"></span>
             </div>
         </div>
@@ -65,7 +65,7 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="PlaceName">場所/建物名</label>
             <div class="col-md-10">
-                <input class="form-control text-box single-line" id="PlaceName" name="PlaceName" type="text" value="" />
+                <input class="form-control text-box single-line" id="PlaceName" name="place" type="text" value="" />
                 <span class="field-validation-valid text-danger" data-valmsg-for="PlaceName" data-valmsg-replace="true"></span>
             </div>
         </div>
@@ -81,7 +81,7 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="StartDate">使用開始日</label>
             <div class="col-md-10">
-                <input class="form-control text-box single-line" data-val="true" data-val-date="フィールド 使用開始日 は日付である必要があります。" id="StartDate" name="StartDate" type="datetime" value="" />
+                <input class="form-control text-box single-line" data-val="true" data-val-date="フィールド 使用開始日 は日付である必要があります。" id="StartDate" name="start_use_date" type="datetime" value="" />
                 <span class="field-validation-valid text-danger" data-valmsg-for="StartDate" data-valmsg-replace="true"></span>
             </div>
         </div>
@@ -89,7 +89,7 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="EndDate">使用終了日</label>
             <div class="col-md-10">
-                <input class="form-control text-box single-line" data-val="true" data-val-date="フィールド 使用終了日 は日付である必要があります。" id="EndDate" name="EndDate" type="datetime" value="" />
+                <input class="form-control text-box single-line" data-val="true" data-val-date="フィールド 使用終了日 は日付である必要があります。" id="EndDate" name="end_use_date" type="datetime" value="" />
                 <span class="field-validation-valid text-danger" data-valmsg-for="EndDate" data-valmsg-replace="true"></span>
             </div>
         </div>
