@@ -41,7 +41,7 @@
 
 <h2>錠管理 - 編集</h2>
 
-<form action="/lockinfo/Edit/1" method="post"><input name="__RequestVerificationToken" type="hidden" value="ukEMtODNwUda1bK-ZZpX393vTkMbsAA5v1Q7jzPj9ynnJj-u20JW0tYwl2otqxXMK5vIKkui_F-fVrRsNdvCCLNZ2CoeRxCLtv7MIucUKqU1" />    <div class="form-horizontal">
+<form action="/lockinfo/Edit/1" method="post"><input name="_token" type="hidden" value="<?php echo csrf_token(); ?>" />    <div class="form-horizontal">
         <hr />
         
         <input data-val="true" data-val-number="フィールド Id には数字を指定してください。" data-val-required="Id フィールドが必要です。" id="Id" name="Id" type="hidden" value="1" />
@@ -54,7 +54,7 @@
             <label class="control-label col-md-2" for="Enable">有効</label>
             <div class="col-md-10">
                 <div class="checkbox">
-                    <input checked="checked" class="check-box" data-val="true" data-val-required="有効 フィールドが必要です。" id="Enable" name="Enable" type="checkbox" value="true" /><input name="Enable" type="hidden" value="false" />
+                    <input checked="checked" class="check-box" data-val="true" data-val-required="有効 フィールドが必要です。" id="Enable" name="enabled" type="checkbox" value="1" <?php if($lockinfo["enabled"]){ ?>checked=""<?php } ?>/>
                     <span class="field-validation-valid text-danger" data-valmsg-for="Enable" data-valmsg-replace="true"></span>
                 </div>
             </div>
@@ -63,7 +63,7 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="Name">名前</label>
             <div class="col-md-10">
-                <input class="form-control text-box single-line" data-val="true" data-val-required="名前は必須です。" id="Name" name="Name" type="text" value="川沿いリバーサイド玄関" />
+                <input class="form-control text-box single-line" data-val="true" data-val-required="名前は必須です。" id="Name" name="lockname" type="text" value="<?php echo $lockinfo["lockname"]; ?>" />
                 <span class="field-validation-valid text-danger" data-valmsg-for="Name" data-valmsg-replace="true"></span>
             </div>
         </div>
@@ -71,7 +71,7 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="PlaceName">場所/建物名</label>
             <div class="col-md-10">
-                <input class="form-control text-box single-line" id="PlaceName" name="PlaceName" type="text" value="川沿いリバーサイド" />
+                <input class="form-control text-box single-line" id="PlaceName" name="place" type="text" value="<?php echo $lockinfo["place"]; ?>" />
                 <span class="field-validation-valid text-danger" data-valmsg-for="PlaceName" data-valmsg-replace="true"></span>
             </div>
         </div>
@@ -87,7 +87,7 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="StartDate">使用開始日</label>
             <div class="col-md-10">
-                <input class="form-control text-box single-line" data-val="true" data-val-date="フィールド 使用開始日 は日付である必要があります。" id="StartDate" name="StartDate" type="datetime" value="2016/05/06 0:00:00" />
+                <input class="form-control text-box single-line" data-val="true" data-val-date="フィールド 使用開始日 は日付である必要があります。" id="StartDate" name="start_use_date" type="datetime" value="<?php echo $lockinfo["start_use_date"]; ?>" />
                 <span class="field-validation-valid text-danger" data-valmsg-for="StartDate" data-valmsg-replace="true"></span>
             </div>
         </div>
@@ -95,7 +95,7 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="EndDate">使用終了日</label>
             <div class="col-md-10">
-                <input class="form-control text-box single-line" data-val="true" data-val-date="フィールド 使用終了日 は日付である必要があります。" id="EndDate" name="EndDate" type="datetime" value="2016/06/01 0:00:00" />
+                <input class="form-control text-box single-line" data-val="true" data-val-date="フィールド 使用終了日 は日付である必要があります。" id="EndDate" name="end_use_date" type="datetime" value="<?php echo $lockinfo["end_use_date"]; ?>" />
                 <span class="field-validation-valid text-danger" data-valmsg-for="EndDate" data-valmsg-replace="true"></span>
             </div>
         </div>

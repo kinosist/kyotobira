@@ -32,7 +32,7 @@ class LockInfoController extends Controller
 			$lockinf->enabled = 0;
     	}
     	else{
-			$lockinf->enabled = 0;
+			$lockinf->enabled = 1;
     	}
 		$lockinf->lockname = $inputs["lockname"];
 		$lockinf->place = $inputs["place"];
@@ -40,18 +40,19 @@ class LockInfoController extends Controller
 		$lockinf->end_use_date = $inputs["end_use_date"];
 		$lockinf->save();
 
-//    	LockInfo::create($inputs);
-        //
-		return view('lockinfo.create');
+		return redirect('lockinfo/index');
     }
-    public function edit()
+    public function edit($id)
     {
         //
-	return view('lockinfo.edit');
+        $lockinf = LockInfo::find($id);
+		return view('lockinfo.edit')->with('lockinfo',$lockinf);
     }
-    public function delete()
+    public function delete($id)
     {
         //
-	return view('lockinfo.index');
+        
+        
+		return view('lockinfo.index');
     }
 }
