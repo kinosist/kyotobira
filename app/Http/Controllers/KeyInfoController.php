@@ -19,15 +19,28 @@ class KeyInfoController extends Controller
     }
     public function create()
     {
-        //
-	return view('keyinfo.create');
+		return view('keyinfo.create');
+	}
+    public function postcreate()
+    {
+		$val=\Validator::make($request->all(),[
+			'keyid'=>'required',
+			'username'=>'required',
+		]);
+		if($val->fails()){
+			return redirect()->back()->withErrors($val->errors());
+		}
+
+
+	        //
+		return view('keyinfo.create');
     }
-    public function edit()
+    public function edit($id)
     {
         //
 	return view('keyinfo.edit');
     }
-    public function delete()
+    public function delete($id)
     {
         //
 	return view('keyinfo.delete');

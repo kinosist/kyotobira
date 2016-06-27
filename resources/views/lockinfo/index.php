@@ -28,8 +28,8 @@
                     <li><a href="/KeyLogs">ログ</a></li>
                 </ul>
                     <ul class="nav navbar-nav navbar-right">
-        <li><a href="/Account/Register" id="registerLink">登録</a></li>
-        <li><a href="/Account/Login" id="loginLink">ログイン</a></li>
+        <li><a href="/account/register" id="registerLink">登録</a></li>
+        <li><a href="/account/login" id="loginLink">ログイン</a></li>
     </ul>
 
             </div>
@@ -78,119 +78,49 @@
         </th>
         <th></th>
     </tr>
-
+<?php
+	foreach($lockinfolist as $info){
+?>
     <tr>
         <td>
             <input checked="checked" class="check-box" disabled="disabled" type="checkbox" />
         </td>
         <td>
-            川沿いリバーサイド玄関
+            <?php print $log["lockname"]; ?>
         </td>
         <td>
-            川沿いリバーサイド
+            <?php print $log["place"]; ?>
         </td>
         <td>
             0
         </td>
         <td>
-            2016/05/06
+            <?php print $log["start_use_date"]; ?>
         </td>
         <td>
-            2016/06/01
+            <?php print $log["end_use_date"]; ?>
         </td>
         <td>
-            2016/05/17 14:25
+            <?php print $log["reg_date"]; ?>
         </td>
         <td>
-            2016/05/17 14:21
-        </td>
-        <td>
-            
+            <?php print $log["upd_date"]; ?>
         </td>
         <td>
             
         </td>
         <td>
-            <a href="/lockinfo/edit/1">Edit</a> |
-            <a href="/lockinfoes/details/1">Details</a> |
-            <a href="/lockinfoes/delete/1">Delete</a>
+            
+        </td>
+        <td>
+            <a href="/lockinfo/edit/<?php print $log["id"]; ?>">Edit</a> |
+            <a href="/lockinfoes/details/<?php print $log["id"]; ?>">Details</a> |
+            <a href="/lockinfoes/delete/<?php print $log["id"]; ?>">Delete</a>
         </td>
     </tr>
-    <tr>
-        <td>
-            <input checked="checked" class="check-box" disabled="disabled" type="checkbox" />
-        </td>
-        <td>
-            ハウス
-        </td>
-        <td>
-            藤森
-        </td>
-        <td>
-            1
-        </td>
-        <td>
-            2016/05/06
-        </td>
-        <td>
-            2016/06/01
-        </td>
-        <td>
-            2016/05/18 08:53
-        </td>
-        <td>
-            2016/05/18 08:53
-        </td>
-        <td>
-            
-        </td>
-        <td>
-            
-        </td>
-        <td>
-            <a href="/lockinfo/edit/2">Edit</a> |
-            <a href="/lockinfo/details/2">Details</a> |
-            <a href="/lockinfo/delete/2">Delete</a>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <input checked="checked" class="check-box" disabled="disabled" type="checkbox" />
-        </td>
-        <td>
-            川沿いリバーサイド裏口
-        </td>
-        <td>
-            川沿いリバーサイド
-        </td>
-        <td>
-            1
-        </td>
-        <td>
-            2016/05/06
-        </td>
-        <td>
-            2016/06/01
-        </td>
-        <td>
-            2016/05/19 15:57
-        </td>
-        <td>
-            2016/05/19 15:57
-        </td>
-        <td>
-            
-        </td>
-        <td>
-            
-        </td>
-        <td>
-            <a href="/lockinfo/edit/3">Edit</a> |
-            <a href="/lockinfo/details/3">Details</a> |
-            <a href="/lockinfo/delete/3">Delete</a>
-        </td>
-    </tr>
-
+<?php
+	}
+?>
 </table>
 
         <hr />

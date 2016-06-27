@@ -22,6 +22,11 @@ class LockInfoController extends Controller
         //
 	return view('lockinfo.create');
     }
+    public function postcreate()
+    {
+        //
+	return view('lockinfo.create');
+    }
     public function edit()
     {
         //

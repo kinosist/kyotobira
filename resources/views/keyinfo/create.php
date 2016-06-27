@@ -67,7 +67,7 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="UserName">使用者名</label>
             <div class="col-md-10">
-                <input class="form-control text-box single-line" data-val="true" data-val-required="使用者名は必須です。" id="UserName" name="UserName" type="text" value="" />
+                <input class="form-control text-box single-line" data-val="true" data-val-required="使用者名は必須です。" id="username" name="username" type="text" value="" />
                 <span class="field-validation-valid text-danger" data-valmsg-for="UserName" data-valmsg-replace="true"></span>
             </div>
         </div>
@@ -75,7 +75,7 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="StartDate">使用開始日</label>
             <div class="col-md-10">
-                <input class="form-control text-box single-line" data-val="true" data-val-date="フィールド 使用開始日 は日付である必要があります。" data-val-required="使用開始日は必須です。" id="StartDate" name="StartDate" type="datetime" value="" />
+                <input class="form-control text-box single-line" data-val="true" data-val-date="フィールド 使用開始日 は日付である必要があります。" data-val-required="使用開始日は必須です。" id="StartDate" name="start_service_date" type="datetime" value="" />
                 <span class="field-validation-valid text-danger" data-valmsg-for="StartDate" data-valmsg-replace="true"></span>
             </div>
         </div>
@@ -83,7 +83,7 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="EndDate">使用終了日</label>
             <div class="col-md-10">
-                <input class="form-control text-box single-line" data-val="true" data-val-date="フィールド 使用終了日 は日付である必要があります。" data-val-required="使用終了日は必須です。" id="EndDate" name="EndDate" type="datetime" value="" />
+                <input class="form-control text-box single-line" data-val="true" data-val-date="フィールド 使用終了日 は日付である必要があります。" data-val-required="使用終了日は必須です。" id="EndDate" name="end_service_date" type="datetime" value="" />
                 <span class="field-validation-valid text-danger" data-valmsg-for="EndDate" data-valmsg-replace="true"></span>
             </div>
         </div>

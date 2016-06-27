@@ -28,8 +28,8 @@
                     <li><a href="/KeyLogs">ログ</a></li>
                 </ul>
                     <ul class="nav navbar-nav navbar-right">
-        <li><a href="/Account/Register" id="registerLink">登録</a></li>
-        <li><a href="/Account/Login" id="loginLink">ログイン</a></li>
+        <li><a href="/account/register" id="registerLink">登録</a></li>
+        <li><a href="/account/login" id="loginLink">ログイン</a></li>
     </ul>
 
             </div>
@@ -79,117 +79,49 @@
         <th></th>
     </tr>
 
+<?php
+	foreach($keyinfolist as $info){
+?>
     <tr>
         <td>
-            川沿いリバーサイド玄関
+            <?php print $info["keyname"]; ?>
         </td>
         <td>
             <input checked="checked" class="check-box" disabled="disabled" type="checkbox" />
         </td>
         <td>
-            qwerty
+            <?php print $info["keyid"]; ?>
         </td>
         <td>
-            kinomaster
+            <?php print $info["username"]; ?>
         </td>
         <td>
-            2016/05/06
+            <?php print $info["start_service_date"]; ?>
         </td>
         <td>
-            2016/06/01
+            <?php print $info["end_service_date"]; ?>
         </td>
         <td>
-            2016/05/18 08:54
+            <?php print $info["reg_date"]; ?>
         </td>
         <td>
-            2016/05/18 08:54
-        </td>
-        <td>
-            
+            <?php print $info["upd_date"]; ?>
         </td>
         <td>
             
         </td>
         <td>
-            <a href="/keyinfo/ddit/1">Edit</a> |
-            <a href="/keyinfo/details/1">Details</a> |
-            <a href="/keyinfo/delete/1">Delete</a>
+            
+        </td>
+        <td>
+            <a href="/keyinfo/edit/<?php print $info["id"]; ?>">Edit</a> |
+            <a href="/keyinfo/details/<?php print $info["id"]; ?>">Details</a> |
+            <a href="/keyinfo/delete/<?php print $info["id"]; ?>">Delete</a>
         </td>
     </tr>
-    <tr>
-        <td>
-            ハウス
-        </td>
-        <td>
-            <input checked="checked" class="check-box" disabled="disabled" type="checkbox" />
-        </td>
-        <td>
-            12345
-        </td>
-        <td>
-            test1
-        </td>
-        <td>
-            2016/05/06
-        </td>
-        <td>
-            2016/06/01
-        </td>
-        <td>
-            2016/05/18 08:55
-        </td>
-        <td>
-            2016/05/18 08:55
-        </td>
-        <td>
-            
-        </td>
-        <td>
-            
-        </td>
-        <td>
-            <a href="/keyinfo/edit/2">Edit</a> |
-            <a href="/keyinfo/details/2">Details</a> |
-            <a href="/keyinfo/delete/2">Delete</a>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            川沿いリバーサイド裏口
-        </td>
-        <td>
-            <input checked="checked" class="check-box" disabled="disabled" type="checkbox" />
-        </td>
-        <td>
-            00002
-        </td>
-        <td>
-            木下英範
-        </td>
-        <td>
-            2016/05/06
-        </td>
-        <td>
-            2016/06/01
-        </td>
-        <td>
-            2016/05/19 15:59
-        </td>
-        <td>
-            2016/05/19 15:59
-        </td>
-        <td>
-            
-        </td>
-        <td>
-            
-        </td>
-        <td>
-            <a href="/keyinfo/edit/3">Edit</a> |
-            <a href="/keyinfo/details/3">Details</a> |
-            <a href="/keyinfo/delete/3">Delete</a>
-        </td>
-    </tr>
+<?php
+	}
+?>
 
 </table>
 
