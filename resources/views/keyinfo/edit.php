@@ -25,7 +25,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="/lockinfo">錠管理</a></li>
                     <li><a href="/keyinfo">鍵管理</a></li>
-                    <li><a href="/KeyLogs">ログ</a></li>
+                    <li><a href="/keylog">ログ</a></li>
                 </ul>
                     <ul class="nav navbar-nav navbar-right">
         <li><a href="/Account/Register" id="registerLink">登録</a></li>
@@ -41,7 +41,7 @@
 
 <h2>鍵管理 - 編集</h2>
 
-<form action="/keyinfo/edit/1" method="post"><input name="__RequestVerificationToken" type="hidden" value="_VYrq12qe3NUe3wH_DoPsbxI1HoIvvRgp70QC-v-v6FajE23nEI60ipyTlBmZ98StuAsUBfwDSg_yBdAnqKbEDnUQetps7QIA_g4nsC7SWQ1" />    <div class="form-horizontal">
+<form action="/keyinfo/edit/1" method="post"><input name="_token" type="hidden" value="<?php echo csrf_token(); ?>" />    <div class="form-horizontal">
         <h4>KeyInfo</h4>
         <hr />
         
@@ -55,7 +55,7 @@
             <label class="control-label col-md-2" for="Enable">有効</label>
             <div class="col-md-10">
                 <div class="checkbox">
-                    <input checked="checked" class="check-box" data-val="true" data-val-required="有効 フィールドが必要です。" id="Enable" name="Enable" type="checkbox" value="true" /><input name="Enable" type="hidden" value="false" />
+                    <input checked="checked" class="check-box" data-val="true" data-val-required="有効 フィールドが必要です。" id="Enable" name="enabled" type="checkbox" value="1" <?php if($keyinfo["enabled"]){ ?>checked=""<?php } ?> />
                     <span class="field-validation-valid text-danger" data-valmsg-for="Enable" data-valmsg-replace="true"></span>
                 </div>
             </div>
@@ -64,7 +64,7 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="KeyCode">鍵ID</label>
             <div class="col-md-10">
-                <input class="form-control text-box single-line" data-val="true" data-val-required="鍵IDは必須です。" id="KeyCode" name="KeyCode" type="text" value="qwerty" />
+                <input class="form-control text-box single-line" data-val="true" data-val-required="鍵IDは必須です。" id="KeyCode" name="keyid" type="text" value="<?php echo $keyinfo["keyid"]; ?>" />
                 <span class="field-validation-valid text-danger" data-valmsg-for="KeyCode" data-valmsg-replace="true"></span>
             </div>
         </div>
@@ -72,7 +72,7 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="UserName">使用者名</label>
             <div class="col-md-10">
-                <input class="form-control text-box single-line" data-val="true" data-val-required="使用者名は必須です。" id="UserName" name="UserName" type="text" value="kinomaster" />
+                <input class="form-control text-box single-line" data-val="true" data-val-required="使用者名は必須です。" id="UserName" name="username" type="text" value="<?php echo $keyinfo["username"]; ?>" />
                 <span class="field-validation-valid text-danger" data-valmsg-for="UserName" data-valmsg-replace="true"></span>
             </div>
         </div>
@@ -80,7 +80,7 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="StartDate">使用開始日</label>
             <div class="col-md-10">
-                <input class="form-control text-box single-line" data-val="true" data-val-date="フィールド 使用開始日 は日付である必要があります。" data-val-required="使用開始日は必須です。" id="StartDate" name="StartDate" type="datetime" value="2016/05/06 0:00:00" />
+                <input class="form-control text-box single-line" data-val="true" data-val-date="フィールド 使用開始日 は日付である必要があります。" data-val-required="使用開始日は必須です。" id="StartDate" name="start_service_date" type="datetime" value="<?php echo $keyinfo["start_service_date"]; ?>" />
                 <span class="field-validation-valid text-danger" data-valmsg-for="StartDate" data-valmsg-replace="true"></span>
             </div>
         </div>
@@ -88,7 +88,7 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="EndDate">使用終了日</label>
             <div class="col-md-10">
-                <input class="form-control text-box single-line" data-val="true" data-val-date="フィールド 使用終了日 は日付である必要があります。" data-val-required="使用終了日は必須です。" id="EndDate" name="EndDate" type="datetime" value="2016/06/01 0:00:00" />
+                <input class="form-control text-box single-line" data-val="true" data-val-date="フィールド 使用終了日 は日付である必要があります。" data-val-required="使用終了日は必須です。" id="EndDate" name="end_service_date" type="datetime" value="<?php echo $keyinfo["end_service_date"]; ?>" />
                 <span class="field-validation-valid text-danger" data-valmsg-for="EndDate" data-valmsg-replace="true"></span>
             </div>
         </div>
@@ -96,10 +96,11 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="LockInfoId">LockInfoId</label>
             <div class="col-md-10">
-                <select class="form-control" id="LockInfoId" name="LockInfoId"><option selected="selected" value="1">川沿いリバーサイド玄関</option>
-<option value="2">ハウス</option>
-<option value="3">川沿いリバーサイド裏口</option>
-</select>
+                <select class="form-control" id="LockInfoId" name="lockinfoid">
+            	<?php foreach( $lockinfo as $info ){ ?>
+            	<option value="<?php echo $info["id"] ?>" <?php if($info["id"]==$keyinfo["lockinfoid"]){?>selected=""<?php } ?>><?php echo $info["lockname"] ?></option>
+            	<?php } ?>
+				</select>
                 <span class="field-validation-valid text-danger" data-valmsg-for="LockInfoId" data-valmsg-replace="true"></span>
             </div>
         </div>

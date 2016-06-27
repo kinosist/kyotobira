@@ -50,7 +50,7 @@
             <label class="control-label col-md-2" for="Enable">有効</label>
             <div class="col-md-10">
                 <div class="checkbox">
-                    <input class="check-box" data-val="true" data-val-required="有効 フィールドが必要です。" id="Enable" name="enabled" type="checkbox" value="true" /><input name="enabled" type="hidden" value="false" />
+                    <input class="check-box" data-val="true" data-val-required="有効 フィールドが必要です。" id="Enable" name="enabled" type="checkbox" value="1" />
                     <span class="field-validation-valid text-danger" data-valmsg-for="Enable" data-valmsg-replace="true"></span>
                 </div>
             </div>
@@ -91,7 +91,7 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="LockInfoId">LockInfoId</label>
             <div class="col-md-10">
-                <select class="form-control" id="LockInfoId" name="LockInfoId">
+                <select class="form-control" id="LockInfoId" name="lockinfoid">
             	<?php foreach( $lockinfo as $info ){ ?>
             	<option value="<?php echo $info["id"] ?>"><?php echo $info["lockname"] ?></option>
             	<?php } ?>

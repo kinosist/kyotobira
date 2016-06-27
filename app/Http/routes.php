@@ -19,6 +19,7 @@ Route::get('/keyinfo/', 'KeyInfoController@index');
 Route::get('/keyinfo/create', 'KeyInfoController@create');
 Route::post('/keyinfo/create', 'KeyInfoController@postcreate');
 Route::get('/keyinfo/edit/{id}', 'KeyInfoController@edit');
+Route::post('/keyinfo/edit/{id}', 'KeyInfoController@postedit');
 Route::get('/keyinfo/delete/{id}', 'KeyInfoController@delete');
 Route::get('/lockinfo/', 'LockInfoController@index');
 Route::get('/lockinfo/create', 'LockInfoController@create');
