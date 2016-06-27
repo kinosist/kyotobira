@@ -25,7 +25,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="/lockinfo">錠管理</a></li>
                     <li><a href="/keyinfo">鍵管理</a></li>
-                    <li><a href="/KeyLogs">ログ</a></li>
+                    <li><a href="/keylog">ログ</a></li>
                 </ul>
                     <ul class="nav navbar-nav navbar-right">
         <li><a href="/account/register" id="registerLink">登録</a></li>
