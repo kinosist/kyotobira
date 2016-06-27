@@ -48,7 +48,7 @@
             <label class="control-label col-md-2" for="Enable">有効</label>
             <div class="col-md-10">
                 <div class="checkbox">
-                    <input class="check-box" data-val="true" data-val-required="有効 フィールドが必要です。" id="Enable" name="enabled" type="checkbox" value="true" /><input name="Enable" type="hidden" value="false" />
+                    <input class="check-box" data-val="true" data-val-required="有効 フィールドが必要です。" id="Enable" name="enabled" type="checkbox" value="1" />
                     <span class="field-validation-valid text-danger" data-valmsg-for="Enable" data-valmsg-replace="true"></span>
                 </div>
             </div>
@@ -73,7 +73,7 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="Status">鍵の状態</label>
             <div class="col-md-10">
-                <input class="form-control text-box single-line" data-val="true" data-val-number="フィールド 鍵の状態 には数字を指定してください。" data-val-required="鍵の状態は必須です。" id="Status" name="Status" type="number" value="" />
+                <input class="form-control text-box single-line" data-val="true" data-val-number="フィールド 鍵の状態 には数字を指定してください。" data-val-required="鍵の状態は必須です。" id="Status" name="lockstatus" type="number" value="" />
                 <span class="field-validation-valid text-danger" data-valmsg-for="Status" data-valmsg-replace="true"></span>
             </div>
         </div>
