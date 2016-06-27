@@ -101,10 +101,10 @@
             <?php print $info["end_use_date"]; ?>
         </td>
         <td>
-            <?php print $info["reg_date"]; ?>
+            <?php print $info["created_at"]; ?>
         </td>
         <td>
-            <?php print $info["upd_date"]; ?>
+            <?php print $info["updated_at"]; ?>
         </td>
         <td>
             
