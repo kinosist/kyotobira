@@ -57,6 +57,14 @@
         </div>
 
         <div class="form-group">
+            <label class="control-label col-md-2" for="KeyCode">鍵名前</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" data-val="true" data-val-required="鍵名前は必須です。" id="keyname" name="keyname" type="text" value="" />
+                <span class="field-validation-valid text-danger" data-valmsg-for="KeyCode" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
             <label class="control-label col-md-2" for="KeyCode">鍵ID</label>
             <div class="col-md-10">
                 <input class="form-control text-box single-line" data-val="true" data-val-required="鍵IDは必須です。" id="keyid" name="keyid" type="text" value="" />

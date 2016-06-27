@@ -41,7 +41,9 @@
 
 <h2>鍵管理 - 編集</h2>
 
-<form action="/keyinfo/edit/1" method="post"><input name="_token" type="hidden" value="<?php echo csrf_token(); ?>" />    <div class="form-horizontal">
+<form action="/keyinfo/edit/<?php echo $keyinfo["id"]; ?>" method="post">
+	<input name="id" type="hidden" value="<?php echo $keyinfo["id"]; ?>" />
+	<input name="_token" type="hidden" value="<?php echo csrf_token(); ?>" />    <div class="form-horizontal">
         <h4>KeyInfo</h4>
         <hr />
         
@@ -58,6 +60,14 @@
                     <input checked="checked" class="check-box" data-val="true" data-val-required="有効 フィールドが必要です。" id="Enable" name="enabled" type="checkbox" value="1" <?php if($keyinfo["enabled"]){ ?>checked=""<?php } ?> />
                     <span class="field-validation-valid text-danger" data-valmsg-for="Enable" data-valmsg-replace="true"></span>
                 </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="KeyCode">鍵名前</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" data-val="true" data-val-required="鍵名前は必須です。" id="keyname" name="keyname" type="text" value="<?php echo $keyinfo["keyname"]; ?>" />
+                <span class="field-validation-valid text-danger" data-valmsg-for="KeyCode" data-valmsg-replace="true"></span>
             </div>
         </div>
 

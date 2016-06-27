@@ -35,7 +35,7 @@ class KeyInfoController extends Controller
 			return redirect()->back()->withErrors($val->errors());
 		}
 */
-    	$inputs = \Request::only('enabled','keyid','username','lockinfoid','start_use_date','end_use_date');
+    	$inputs = \Request::only('enabled','keyid','keyname','username','lockinfoid','start_service_date','end_service_date');
 		$keyinf = new KeyInfo;
     	if( !$inputs["enabled"] ){
 			$keyinf->enabled = 0;
@@ -44,10 +44,11 @@ class KeyInfoController extends Controller
 			$keyinf->enabled = 1;
     	}
 		$keyinf->keyid = $inputs["keyid"];
+		$keyinf->keyname = $inputs["keyname"];
 		$keyinf->username = $inputs["username"];
 		$keyinf->lockinfoid = $inputs["lockinfoid"];
-		$keyinf->start_use_date = $inputs["start_use_date"];
-		$keyinf->end_use_date = $inputs["end_use_date"];
+		$keyinf->start_service_date = $inputs["start_service_date"];
+		$keyinf->end_service_date = $inputs["end_service_date"];
 		$keyinf->save();
 
 		return redirect('/keyinfo/');
@@ -62,7 +63,7 @@ class KeyInfoController extends Controller
     }
     public function postedit($id)
     {
-    	$inputs = \Request::only('enabled','keyid','username','lockinfoid','start_use_date','end_use_date');
+    	$inputs = \Request::only('id','enabled','keyid','keyname','username','lockinfoid','start_service_date','end_service_date');
         $keyinf = KeyInfo::find($id);
     	if( !$inputs["enabled"] ){
 			$keyinf->enabled = 0;
@@ -71,13 +72,15 @@ class KeyInfoController extends Controller
 			$keyinf->enabled = 1;
     	}
 		$keyinf->keyid = $inputs["keyid"];
+		$keyinf->keyname = $inputs["keyname"];
 		$keyinf->username = $inputs["username"];
 		$keyinf->lockinfoid = $inputs["lockinfoid"];
-		$keyinf->start_use_date = $inputs["start_use_date"];
-		$keyinf->end_use_date = $inputs["end_use_date"];
+		$keyinf->start_service_date = $inputs["start_service_date"];
+		$keyinf->end_service_date = $inputs["end_service_date"];
 		$keyinf->save();
+    	$lockinfo = LockInfo::all();
 
-		return view('lockinfo.edit')->with('lockinfo',$lockinf);
+		return view('keyinfo.edit')->with(['keyinfo'=>$keyinf,'lockinfo'=>$lockinfo]);
     }
     public function delete($id)
     {
