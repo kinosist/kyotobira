@@ -48,6 +48,25 @@ class LockInfoController extends Controller
         $lockinf = LockInfo::find($id);
 		return view('lockinfo.edit')->with('lockinfo',$lockinf);
     }
+    public function postedit($id)
+    {
+        //
+    	$inputs = \Request::only('enabled','lockname','place','start_use_date','end_use_date');
+		$lockinf = new LockInfo;
+    	if( !$inputs["enabled"] ){
+			$lockinf->enabled = 0;
+    	}
+    	else{
+			$lockinf->enabled = 1;
+    	}
+		$lockinf->lockname = $inputs["lockname"];
+		$lockinf->place = $inputs["place"];
+		$lockinf->start_use_date = $inputs["start_use_date"];
+		$lockinf->end_use_date = $inputs["end_use_date"];
+		$lockinf->save($inputs["id"]);
+
+		return view('lockinfo.edit')->with('lockinfo',$lockinf);
+    }
     public function delete($id)
     {
         //

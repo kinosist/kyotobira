@@ -24,6 +24,7 @@ Route::get('/lockinfo/', 'LockInfoController@index');
 Route::get('/lockinfo/create', 'LockInfoController@create');
 Route::post('/lockinfo/create', 'LockInfoController@postcreate');
 Route::get('/lockinfo/edit/{id}', 'LockInfoController@edit');
+Route::post('/lockinfo/edit/{id}', 'LockInfoController@postedit');
 Route::get('/lockinfo/delete/{id}', 'LockInfoController@delete');
 Route::get('/keylog/', 'KeyLogController@index');
 Route::post('/keylog/search', 'KeyLogController@search');

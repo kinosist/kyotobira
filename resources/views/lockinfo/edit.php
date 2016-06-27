@@ -41,12 +41,12 @@
 
 <h2>錠管理 - 編集</h2>
 
-<form action="/lockinfo/Edit/1" method="post"><input name="_token" type="hidden" value="<?php echo csrf_token(); ?>" />    <div class="form-horizontal">
+<form action="/lockinfo/edit/<?php echo $lockinfo["id"]; ?>" method="post"><input name="_token" type="hidden" value="<?php echo csrf_token(); ?>" />    <div class="form-horizontal">
         <hr />
         
-        <input data-val="true" data-val-number="フィールド Id には数字を指定してください。" data-val-required="Id フィールドが必要です。" id="Id" name="Id" type="hidden" value="1" />
-        <input data-val="true" data-val-date="フィールド 更新日 は日付である必要があります。" data-val-required="更新日 フィールドが必要です。" id="UpdateDateTime" name="UpdateDateTime" type="hidden" value="2016/05/17 14:25:53" />
-        <input data-val="true" data-val-date="フィールド 登録日 は日付である必要があります。" data-val-required="登録日 フィールドが必要です。" id="CreateDateTime" name="CreateDateTime" type="hidden" value="2016/05/17 14:21:36" />
+        <input data-val="true" data-val-number="フィールド Id には数字を指定してください。" data-val-required="Id フィールドが必要です。" id="Id" name="id" type="hidden" value="<?php echo $lockinfo["id"]; ?>" />
+        <input data-val="true" data-val-date="フィールド 更新日 は日付である必要があります。" data-val-required="更新日 フィールドが必要です。" id="UpdateDateTime" name="UpdateDateTime" type="hidden" value="<?php echo $lockinfo["created_at"]; ?>" />
+        <input data-val="true" data-val-date="フィールド 登録日 は日付である必要があります。" data-val-required="登録日 フィールドが必要です。" id="CreateDateTime" name="CreateDateTime" type="hidden" value="<?php echo $lockinfo["updated_at"]; ?>" />
         <input id="UpdateUser" name="UpdateUser" type="hidden" value="" />
         <input id="CreateUser" name="CreateUser" type="hidden" value="" />
 
