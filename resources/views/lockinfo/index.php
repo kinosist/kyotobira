@@ -25,7 +25,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="/lockinfo">錠管理</a></li>
                     <li><a href="/keyinfo">鍵管理</a></li>
-                    <li><a href="/KeyLogs">ログ</a></li>
+                    <li><a href="/keylog">ログ</a></li>
                 </ul>
                     <ul class="nav navbar-nav navbar-right">
         <li><a href="/account/register" id="registerLink">登録</a></li>
@@ -86,25 +86,25 @@
             <input checked="checked" class="check-box" disabled="disabled" type="checkbox" />
         </td>
         <td>
-            <?php print $log["lockname"]; ?>
+            <?php print $info["lockname"]; ?>
         </td>
         <td>
-            <?php print $log["place"]; ?>
+            <?php print $info["place"]; ?>
         </td>
         <td>
             0
         </td>
         <td>
-            <?php print $log["start_use_date"]; ?>
+            <?php print $info["start_use_date"]; ?>
         </td>
         <td>
-            <?php print $log["end_use_date"]; ?>
+            <?php print $info["end_use_date"]; ?>
         </td>
         <td>
-            <?php print $log["reg_date"]; ?>
+            <?php print $info["reg_date"]; ?>
         </td>
         <td>
-            <?php print $log["upd_date"]; ?>
+            <?php print $info["upd_date"]; ?>
         </td>
         <td>
             

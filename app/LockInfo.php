@@ -8,5 +8,5 @@ class LockInfo extends Model
 {
     //
     protected $table = 'lockinfos';
-    public $timestamps = false;
+//    public $timestamps = false;
 }
