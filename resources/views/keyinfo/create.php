@@ -92,9 +92,9 @@
             <label class="control-label col-md-2" for="LockInfoId">LockInfoId</label>
             <div class="col-md-10">
                 <select class="form-control" id="LockInfoId" name="LockInfoId">
-            	<option value="1">川沿いリバーサイド玄関</option>
-				<option value="2">ハウス</option>
-				<option value="3">川沿いリバーサイド裏口</option>
+            	<?php foreach( $lockinfo as $info ){ ?>
+            	<option value="<?php echo $info["id"] ?>"><?php echo $info["lockname"] ?></option>
+            	<?php } ?>
 				</select>
                 <span class="field-validation-valid text-danger" data-valmsg-for="LockInfoId" data-valmsg-replace="true"></span>
             </div>

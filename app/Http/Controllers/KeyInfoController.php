@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\KeyInfo;
+use App\LockInfo;
 
 class KeyInfoController extends Controller
 {
@@ -19,7 +20,9 @@ class KeyInfoController extends Controller
     }
     public function create()
     {
-		return view('keyinfo.create');
+    	$lockinfo = LockInfo::all();
+    	
+		return view('keyinfo.create')->with('lockinfo',$lockinfo);
 	}
     public function postcreate()
     {

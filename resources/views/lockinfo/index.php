@@ -114,8 +114,8 @@
         </td>
         <td>
             <a href="/lockinfo/edit/<?php print $info["id"]; ?>">Edit</a> |
-            <a href="/lockinfoes/details/<?php print $info["id"]; ?>">Details</a> |
-            <a href="/lockinfoes/delete/<?php print $info["id"]; ?>">Delete</a>
+            <!-- a href="/lockinfo/details/<?php print $info["id"]; ?>">Details</a --> |
+            <a href="/lockinfo/delete/<?php print $info["id"]; ?>">Delete</a>
         </td>
     </tr>
 <?php

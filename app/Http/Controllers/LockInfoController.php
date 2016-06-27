@@ -40,7 +40,7 @@ class LockInfoController extends Controller
 		$lockinf->end_use_date = $inputs["end_use_date"];
 		$lockinf->save();
 
-		return redirect('lockinfo/index');
+		return redirect('/lockinfo/');
     }
     public function edit($id)
     {
@@ -70,8 +70,8 @@ class LockInfoController extends Controller
     public function delete($id)
     {
         //
-        
-        
-		return view('lockinfo.index');
+        $lockinf = LockInfo::find($id);
+        $lockinf->delete();
+		return redirect('/lockinfo/');
     }
 }
