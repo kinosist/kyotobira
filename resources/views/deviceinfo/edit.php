@@ -41,14 +41,15 @@
 
 <h2>デバイス管理 - 編集</h2>
 
-<form action="/deviceinfo/create" method="post"><input name="_token" type="hidden" value="<?php echo csrf_token(); ?>" />    <div class="form-horizontal">
+<form action="/deviceinfo/edit/<?php echo $keyinfo["id"]; ?>" method="post" name="form">
+	<input name="_token" type="hidden" value="<?php echo csrf_token(); ?>" />    <div class="form-horizontal">
         <hr />
         
         <div class="form-group">
             <label class="control-label col-md-2" for="Enable">有効</label>
             <div class="col-md-10">
                 <div class="checkbox">
-                    <input class="check-box" data-val="true" data-val-required="有効 フィールドが必要です。" id="Enable" name="enabled" type="checkbox" value="1" />
+                    <input class="check-box" data-val="true" data-val-required="有効 フィールドが必要です。" id="Enable" name="enabled" type="checkbox" value="1" <?php if($deviceinfo["enabled"]){ ?>checked="checked" <?php } ?> />
                     <span class="field-validation-valid text-danger" data-valmsg-for="Enable" data-valmsg-replace="true"></span>
                 </div>
             </div>
@@ -57,7 +58,7 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="Name">名前</label>
             <div class="col-md-10">
-                <input class="form-control text-box single-line" data-val="true" data-val-required="名前は必須です。" id="Name" name="devicename" type="text" value="" />
+                <input class="form-control text-box single-line" data-val="true" data-val-required="名前は必須です。" id="Name" name="devicename" type="text" value="<?php echo $deviceinfo["devicename"]; ?>" />
                 <span class="field-validation-valid text-danger" data-valmsg-for="Name" data-valmsg-replace="true"></span>
             </div>
         </div>
@@ -65,7 +66,7 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="PlaceName">IPアドレス</label>
             <div class="col-md-10">
-                <input class="form-control text-box single-line" id="deviceip" name="deviceip" type="text" value="" />
+                <input class="form-control text-box single-line" id="deviceip" name="deviceip" type="text" value="<?php echo $deviceinfo["deviceip"]; ?>" />
                 <span class="field-validation-valid text-danger" data-valmsg-for="PlaceName" data-valmsg-replace="true"></span>
             </div>
         </div>

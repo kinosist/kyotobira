@@ -97,6 +97,7 @@
         </td>
         <td>
             <a href="/deviceinfo/edit/<?php print $info["id"]; ?>">Edit</a> |
+            <a href="/deviceinfo/delete/<?php print $info["id"]; ?>">Delete</a>
         </td>
     </tr>
 <?php

@@ -38,6 +38,8 @@ class DeviceInfoController extends Controller
     }
     public function edit($id)
     {
+        $deviceinf = DeviceInfo::find($id);
+		return view('deviceinfo.edit')->with('deviceinfo',$deviceinf);
     }
     public function postedit($id)
     {
