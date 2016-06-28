@@ -75,7 +75,7 @@
             <div class="col-md-10">
                 <select class="form-control" id="keyinfoid" name="keyinfoid">
             	<?php foreach( $keyinfo as $info ){ ?>
-            	<option value="<?php echo $info["id"] ?>" <?php if($deviceinfo["deviceip"]==$info["id"]){ ?>selected="selected"<?php } ?>><?php echo $info["keyname"] ?></option>
+            	<option value="<?php echo $info["id"] ?>" <?php if($deviceinfo["keyinfoid"]==$info["id"]){ ?>selected="selected"<?php } ?>><?php echo $info["keyname"] ?></option>
             	<?php } ?>
 				</select>
                 <span class="field-validation-valid text-danger" data-valmsg-for="keyinfoid" data-valmsg-replace="true"></span>

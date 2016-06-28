@@ -41,7 +41,7 @@ class DeviceInfoController extends Controller
     }
     public function edit($id)
     {
-    	$keyinfo = KeyInfo::query()->where('enabled', '=', 1)->get();
+    	$keyinfo = KeyInfo::query()->where('enabled', '=', 1)->orderby("id","asc")->get();
         $deviceinf = DeviceInfo::find($id);
 		return view('deviceinfo.edit')->with(['deviceinfo'=>$deviceinf,'keyinfo'=>$keyinfo]);
     }
@@ -57,8 +57,9 @@ class DeviceInfoController extends Controller
     	}
 		$deviceinf->devicename = $inputs["devicename"];
 		$deviceinf->deviceip = $inputs["deviceip"];
-		$deviceinf->deviceip = $inputs["keyinfo"];
+		$deviceinf->keyinfoid = $inputs["keyinfoid"];
 		$deviceinf->save();
+    	$keyinfo = KeyInfo::query()->where('enabled', '=', 1)->get();
 		return view('deviceinfo.edit')->with(['deviceinfo'=>$deviceinf,'keyinfo'=>$keyinfo]);
     }
     public function delete($id)

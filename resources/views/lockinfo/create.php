@@ -42,14 +42,16 @@
 
 <h2>錠管理 - 登録</h2>
 
-<form action="/lockinfo/create" method="post" name="form"><input name="_token" type="hidden" value="<?php echo csrf_token(); ?>" />    <div class="form-horizontal">
+<form action="/lockinfo/create" method="post" name="form">
+	<input name="_token" type="hidden" value="<?php echo csrf_token(); ?>" />
+	<div class="form-horizontal">
         <hr />
         
         <div class="form-group">
             <label class="control-label col-md-2" for="Enable">有効</label>
             <div class="col-md-10">
                 <div class="checkbox">
-                    <input class="check-box" data-val="true" data-val-required="有効 フィールドが必要です。" id="Enable" name="enabled" type="checkbox" value="1" />
+                    <input class="check-box" data-val="true" data-val-required="有効 フィールドが必要です。" id="Enable" name="enabled" type="checkbox" value="1" checked="checked" />
                     <span class="field-validation-valid text-danger" data-valmsg-for="Enable" data-valmsg-replace="true"></span>
                 </div>
             </div>
