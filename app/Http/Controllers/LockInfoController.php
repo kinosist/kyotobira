@@ -26,7 +26,7 @@ class LockInfoController extends Controller
     {
     	
     	//$inputs = \Request::all();
-    	$inputs = \Request::only('enabled','lockname','place','start_use_date','end_use_date');
+    	$inputs = \Request::only('enabled','lockname','place','lockstatus','start_use_date','end_use_date');
 		$lockinf = new LockInfo;
     	if( !$inputs["enabled"] ){
 			$lockinf->enabled = 0;
@@ -36,6 +36,7 @@ class LockInfoController extends Controller
     	}
 		$lockinf->lockname = $inputs["lockname"];
 		$lockinf->place = $inputs["place"];
+		$lockinf->lockstatus = $inputs["lockstatus"];
 		$lockinf->start_use_date = $inputs["start_use_date"];
 		$lockinf->end_use_date = $inputs["end_use_date"];
 		$lockinf->save();
@@ -51,7 +52,7 @@ class LockInfoController extends Controller
     public function postedit($id)
     {
         //
-    	$inputs = \Request::only('id','enabled','lockname','place','start_use_date','end_use_date');
+    	$inputs = \Request::only('id','enabled','lockname','place','lockstatus','start_use_date','end_use_date');
         $lockinf = LockInfo::find($id);
     	if( !$inputs["enabled"] ){
 			$lockinf->enabled = 0;
@@ -61,6 +62,7 @@ class LockInfoController extends Controller
     	}
 		$lockinf->lockname = $inputs["lockname"];
 		$lockinf->place = $inputs["place"];
+		$lockinf->lockstatus = $inputs["lockstatus"];
 		$lockinf->start_use_date = $inputs["start_use_date"];
 		$lockinf->end_use_date = $inputs["end_use_date"];
 		$lockinf->save();

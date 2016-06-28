@@ -20,7 +20,7 @@ class KeyInfoController extends Controller
     }
     public function create()
     {
-    	$lockinfo = LockInfo::all();
+    	$lockinfo = LockInfo::query()->where('enabled', '=', 1)->get();
     	
 		return view('keyinfo.create')->with('lockinfo',$lockinfo);
 	}
@@ -56,7 +56,7 @@ class KeyInfoController extends Controller
     public function edit($id)
     {
         $keyinf = KeyInfo::find($id);
-    	$lockinfo = LockInfo::all();
+    	$lockinfo = LockInfo::query()->where('enabled', '=', 1)->get();
         //
 		return view('keyinfo.edit')->with(['keyinfo'=>$keyinf,'lockinfo'=>$lockinfo]);
     }

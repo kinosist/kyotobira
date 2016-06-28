@@ -74,8 +74,10 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="Status">鍵の状態</label>
             <div class="col-md-10">
-                <input class="form-control text-box single-line" data-val="true" data-val-number="フィールド 鍵の状態 には数字を指定してください。" data-val-required="鍵の状態は必須です。" id="Status" name="lockstatus" type="number" value="" />
-                <span class="field-validation-valid text-danger" data-valmsg-for="Status" data-valmsg-replace="true"></span>
+				<select class="form-control" id="Status" name="lockstatus">
+					<option value="1">解錠</option>
+					<option value="2">施錠</option>
+				</select>
             </div>
         </div>
 
