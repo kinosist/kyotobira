@@ -17,6 +17,13 @@ class KeyInfoController extends Controller
 		$query = KeyInfo::query();
 		$keyinfolist = $query->paginate(30);
 		return view('keyinfo.index')->with('keyinfolist',$keyinfolist);
+        //
+        /*
+		$keyinfolist = DB::table('keyinfos')->join('lockinfos', 'keyinfos.lockinfoid', '=', 'lockinfos.id')
+			->select('keyinfos.*', 'lockinfos.lockname')
+            ->get();
+        */
+        //var_dump($keyinfolist);exit;
     }
     public function create()
     {

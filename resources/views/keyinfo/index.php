@@ -60,6 +60,9 @@
             使用者名
         </th>
         <th>
+            錠
+        </th>
+        <th>
             使用開始日
         </th>
         <th>
@@ -70,12 +73,6 @@
         </th>
         <th>
             登録日
-        </th>
-        <th>
-            更新者
-        </th>
-        <th>
-            登録者
         </th>
         <th></th>
     </tr>
@@ -97,6 +94,9 @@
             <?php print $info["username"]; ?>
         </td>
         <td>
+            <?php print $info["lockname"]["lockname"]; ?>
+        </td>
+        <td>
             <?php print $info["start_service_date"]->format('Y/m/d'); ?>
         </td>
         <td>
@@ -107,12 +107,6 @@
         </td>
         <td>
             <?php print $info["updated_at"]->format('Y/m/d'); ?>
-        </td>
-        <td>
-            
-        </td>
-        <td>
-            
         </td>
         <td>
             <a href="/keyinfo/edit/<?php print $info["id"]; ?>">Edit</a> |

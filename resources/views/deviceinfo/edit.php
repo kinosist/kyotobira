@@ -41,7 +41,7 @@
 
 <h2>デバイス管理 - 編集</h2>
 
-<form action="/deviceinfo/edit/<?php echo $keyinfo["id"]; ?>" method="post" name="form">
+<form action="/deviceinfo/edit/<?php echo $deviceinfo["id"]; ?>" method="post" name="form">
 	<input name="_token" type="hidden" value="<?php echo csrf_token(); ?>" />    <div class="form-horizontal">
         <hr />
         
@@ -73,7 +73,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>
     </div>
