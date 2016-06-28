@@ -84,10 +84,10 @@
             <?php print $info["deviceip"]; ?>
         </td>
         <td>
-            <?php print $info["created_at"]; ?>
+            <?php print $info["created_at"]->format('Y/m/d'); ?>
         </td>
         <td>
-            <?php print $info["updated_at"]; ?>
+            <?php print $info["updated_at"]->format('Y/m/d'); ?>
         </td>
         <td>
             

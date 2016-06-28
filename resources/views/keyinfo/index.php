@@ -97,16 +97,16 @@
             <?php print $info["username"]; ?>
         </td>
         <td>
-            <?php print $info["start_service_date"]; ?>
+            <?php print $info["start_service_date"]->format('Y/m/d'); ?>
         </td>
         <td>
-            <?php print $info["end_service_date"]; ?>
+            <?php print $info["end_service_date"]->format('Y/m/d'); ?>
         </td>
         <td>
-            <?php print $info["created_at"]; ?>
+            <?php print $info["created_at"]->format('Y/m/d'); ?>
         </td>
         <td>
-            <?php print $info["updated_at"]; ?>
+            <?php print $info["updated_at"]->format('Y/m/d'); ?>
         </td>
         <td>
             

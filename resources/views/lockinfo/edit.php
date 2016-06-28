@@ -80,8 +80,10 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="Status">鍵の状態</label>
             <div class="col-md-10">
-                <input class="form-control text-box single-line" data-val="true" data-val-number="フィールド 鍵の状態 には数字を指定してください。" data-val-required="鍵の状態は必須です。" id="Status" name="Status" type="number" value="0" />
-                <span class="field-validation-valid text-danger" data-valmsg-for="Status" data-valmsg-replace="true"></span>
+				<select class="form-control" id="Status" name="lockstatus">
+					<option value="1" <?php if($lockinfo["lockstatus"]==1){ ?>selected="selected"<?php } ?>>解錠</option>
+					<option value="2" <?php if($lockinfo["lockstatus"]==2){ ?>selected="selected"<?php } ?>>施錠</option>
+				</select>
             </div>
         </div>
 

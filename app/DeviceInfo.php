@@ -8,5 +8,5 @@ class DeviceInfo extends Model
 {
     //
     protected $table = 'deviceinfos';
-//    public $timestamps = false;
+	protected $dates = ['created_at','updated_at'];
 }

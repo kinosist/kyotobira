@@ -93,19 +93,20 @@
             <?php print $info["place"]; ?>
         </td>
         <td>
-            0
+            <?php if($info["lockstatus"]==1){ ?>解錠<?php } ?>
+            <?php if($info["lockstatus"]==2){ ?>施錠<?php } ?>
         </td>
         <td>
-            <?php print $info["start_use_date"]; ?>
+            <?php print $info["start_use_date"]->format("Y/m/d"); ?>
         </td>
         <td>
-            <?php print $info["end_use_date"]; ?>
+            <?php print $info["end_use_date"]->format("Y/m/d"); ?>
         </td>
         <td>
-            <?php print $info["created_at"]; ?>
+            <?php print $info["created_at"]->format("Y/m/d"); ?>
         </td>
         <td>
-            <?php print $info["updated_at"]; ?>
+            <?php print $info["updated_at"]->format("Y/m/d"); ?>
         </td>
         <td>
             
