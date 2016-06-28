@@ -88,7 +88,7 @@
             <?php print $info["keyname"]; ?>
         </td>
         <td>
-            <input checked="checked" class="check-box" disabled="disabled" type="checkbox" />
+            <input class="check-box" disabled="disabled" type="checkbox" <?php if($info["enabled"]==1){ ?>checked="checked"<?php } ?>/>
         </td>
         <td>
             <?php print $info["keyid"]; ?>

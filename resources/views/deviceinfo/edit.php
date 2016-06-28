@@ -78,7 +78,7 @@
     </div>
 </form>
 <div>
-    <a href="/lockinfo/">Back to List</a>
+    <a href="/deviceinfo/">Back to List</a>
 </div>
 
         <hr />

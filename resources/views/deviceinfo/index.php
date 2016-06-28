@@ -43,7 +43,7 @@
 <h2>錠管理 - 一覧</h2>
 
 <p>
-    <a href="/lockinfo/create">Create New</a>
+    <a href="/deviceinfo/create">Create New</a>
 </p>
 <table class="table">
     <tr>
@@ -54,16 +54,7 @@
             名前
         </th>
         <th>
-            場所/建物名
-        </th>
-        <th>
-            鍵の状態
-        </th>
-        <th>
-            使用開始日
-        </th>
-        <th>
-            使用終了日
+            IPアドレス
         </th>
         <th>
             更新日
@@ -80,26 +71,17 @@
         <th></th>
     </tr>
 <?php
-	foreach($lockinfolist as $info){
+	foreach($deviceinfolist as $info){
 ?>
     <tr>
         <td>
-            <input checked="checked" class="check-box" disabled="disabled" type="checkbox" />
+            <input class="check-box" disabled="disabled" type="checkbox" <?php if($info["enabled"]==1){ ?>checked="checked"<?php } ?> />
         </td>
         <td>
-            <?php print $info["lockname"]; ?>
+            <?php print $info["devicename"]; ?>
         </td>
         <td>
-            <?php print $info["place"]; ?>
-        </td>
-        <td>
-            0
-        </td>
-        <td>
-            <?php print $info["start_use_date"]; ?>
-        </td>
-        <td>
-            <?php print $info["end_use_date"]; ?>
+            <?php print $info["deviceip"]; ?>
         </td>
         <td>
             <?php print $info["created_at"]; ?>
@@ -114,8 +96,7 @@
             
         </td>
         <td>
-            <a href="/lockinfo/edit/<?php print $info["id"]; ?>">Edit</a> |
-            <a href="/lockinfo/delete/<?php print $info["id"]; ?>">Delete</a>
+            <a href="/deviceinfo/edit/<?php print $info["id"]; ?>">Edit</a> |
         </td>
     </tr>
 <?php

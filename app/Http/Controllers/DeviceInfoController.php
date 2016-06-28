@@ -21,6 +21,19 @@ class DeviceInfoController extends Controller
     }
     public function postcreate()
     {
+    	$inputs = \Request::only('enabled','devicename','deviceip');
+		$deviceinf = new DeviceInfo;
+    	if( !$inputs["enabled"] ){
+			$deviceinf->enabled = 0;
+    	}
+    	else{
+			$deviceinf->enabled = 1;
+    	}
+		$deviceinf->devicename = $inputs["devicename"];
+		$deviceinf->deviceip = $inputs["deviceip"];
+		$deviceinf->save();
+
+
 		return redirect('/deviceinfo/');
     }
     public function edit($id)
