@@ -42,7 +42,7 @@
 
 <h2>錠管理 - 登録</h2>
 
-<form action="/lockinfo/create" method="post"><input name="_token" type="hidden" value="<?php echo csrf_token(); ?>" />    <div class="form-horizontal">
+<form action="/lockinfo/create" method="post" name="form"><input name="_token" type="hidden" value="<?php echo csrf_token(); ?>" />    <div class="form-horizontal">
         <hr />
         
         <div class="form-group">
@@ -119,11 +119,11 @@
     <script src="/scripts/bootstrap-datepicker.js"></script>
     <script src="/scripts/respond.js"></script>
     <script src="/scripts/app.js"></script>
+    <script src="/scripts/warn_unload.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
+		$('form').watchInputChange();
 	});
 </script>
-
-
 </body>
 </html>

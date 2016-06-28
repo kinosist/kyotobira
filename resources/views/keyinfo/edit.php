@@ -42,7 +42,7 @@
 
 <h2>鍵管理 - 編集</h2>
 
-<form action="/keyinfo/edit/<?php echo $keyinfo["id"]; ?>" method="post">
+<form action="/keyinfo/edit/<?php echo $keyinfo["id"]; ?>" method="post" name="form">
 	<input name="id" type="hidden" value="<?php echo $keyinfo["id"]; ?>" />
 	<input name="_token" type="hidden" value="<?php echo csrf_token(); ?>" />    <div class="form-horizontal">
         <h4>KeyInfo</h4>
@@ -138,5 +138,11 @@
     <script src="/scripts/bootstrap-datepicker.js"></script>
     <script src="/scripts/respond.js"></script>
     <script src="/scripts/app.js"></script>
+    <script src="/scripts/warn_unload.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('form').watchInputChange();
+	});
+</script>
 </body>
 </html>

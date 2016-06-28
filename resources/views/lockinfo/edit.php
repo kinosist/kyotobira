@@ -125,6 +125,11 @@
     <script src="/scripts/bootstrap-datepicker.js"></script>
     <script src="/scripts/respond.js"></script>
     <script src="/scripts/app.js"></script>
-
+    <script src="/scripts/warn_unload.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('form').watchInputChange();
+	});
+</script>
 </body>
 </html>
