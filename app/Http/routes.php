@@ -15,6 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::group(['middleware' => ['web']], function () {
+Route::get('/deviceinfo/', 'DeviceInfoController@index');
+Route::get('/deviceinfo/create', 'DeviceInfoController@create');
+Route::post('/deviceinfo/create', 'DeviceInfoController@postcreate');
+Route::get('/deviceinfo/edit/{id}', 'DeviceInfoController@edit');
+Route::post('/deviceinfo/edit/{id}', 'DeviceInfoController@postedit');
+Route::get('/deviceinfo/delete/{id}', 'DeviceInfoController@delete');
 Route::get('/keyinfo/', 'KeyInfoController@index');
 Route::get('/keyinfo/create', 'KeyInfoController@create');
 Route::post('/keyinfo/create', 'KeyInfoController@postcreate');

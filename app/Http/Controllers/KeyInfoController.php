@@ -52,7 +52,6 @@ class KeyInfoController extends Controller
 		$keyinf->save();
 
 		return redirect('/keyinfo/');
-
     }
     public function edit($id)
     {
