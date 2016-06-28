@@ -13,4 +13,8 @@ class KeyInfo extends Model
     {
         return $this->hasOne('App\LockInfo', 'id', 'lockinfoid');
     }
+    public function deviceinf()
+    {
+        return $this->hasOne('App\DeviceInfo', 'keyinfoid', 'id');
+    }
 }
