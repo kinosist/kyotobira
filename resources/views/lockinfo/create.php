@@ -82,7 +82,7 @@
         </div>
 
         <div class="form-group">
-            <label class="control-label col-md-2" for="StartDate">使用開始日</label>
+            <label class="control-label col-md-2 datepicker" for="StartDate">使用開始日</label>
             <div class="col-md-10">
                 <input class="form-control text-box single-line" data-val="true" data-val-date="フィールド 使用開始日 は日付である必要があります。" id="StartDate" name="start_use_date" type="datetime" value="" />
                 <span class="field-validation-valid text-danger" data-valmsg-for="StartDate" data-valmsg-replace="true"></span>
@@ -90,7 +90,7 @@
         </div>
 
         <div class="form-group">
-            <label class="control-label col-md-2" for="EndDate">使用終了日</label>
+            <label class="control-label col-md-2 datepicker" for="EndDate">使用終了日</label>
             <div class="col-md-10">
                 <input class="form-control text-box single-line" data-val="true" data-val-date="フィールド 使用終了日 は日付である必要があります。" id="EndDate" name="end_use_date" type="datetime" value="" />
                 <span class="field-validation-valid text-danger" data-valmsg-for="EndDate" data-valmsg-replace="true"></span>
@@ -116,9 +116,18 @@
 
     <script src="/scripts/jquery-1.10.2.js"></script>
     <script src="/scripts/bootstrap.js"></script>
-    <script src="/scripts/bootstrap-datepicker.js"></script>
+    <script src="/scripts/bootstrap-datetimepicker-ja.js"></script>
     <script src="/scripts/respond.js"></script>
     <script src="/scripts/app.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.datepicker').datepicker({
+			language: 'ja',
+			format: 'yyyy-M-dd'
+		});
+	});
+</script>
+
 
 </body>
 </html>
