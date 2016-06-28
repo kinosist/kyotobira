@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
  
 use App\KeyLog;
+use App\KeyInfo;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
  
@@ -18,6 +19,10 @@ class LockingController extends Controller
 
     public function locking()
     {
+    	
+    	$inputs = \Request::only('keyid');
+    	
+    	
     	$this->lockingRaspberryPI(1);
     	
     	

@@ -25,11 +25,11 @@
                     <li><a href="/deviceinfo">デバイス管理</a></li>
                     <li><a href="/lockinfo">錠管理</a></li>
                     <li><a href="/keyinfo">鍵管理</a></li>
-                    <li><a href="/KeyLogs">ログ</a></li>
+                    <li><a href="/keylog">ログ</a></li>
                 </ul>
                     <ul class="nav navbar-nav navbar-right">
-        <li><a href="/Account/Register" id="registerLink">登録</a></li>
-        <li><a href="/Account/Login" id="loginLink">ログイン</a></li>
+        <li><a href="/account/register" id="registerLink">登録</a></li>
+        <li><a href="/account/login" id="loginLink">ログイン</a></li>
     </ul>
 
             </div>
@@ -68,6 +68,17 @@
             <div class="col-md-10">
                 <input class="form-control text-box single-line" id="deviceip" name="deviceip" type="text" value="<?php echo $deviceinfo["deviceip"]; ?>" />
                 <span class="field-validation-valid text-danger" data-valmsg-for="PlaceName" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="keyinfoid">鍵情報</label>
+            <div class="col-md-10">
+                <select class="form-control" id="keyinfoid" name="keyinfoid">
+            	<?php foreach( $keyinfo as $info ){ ?>
+            	<option value="<?php echo $info["id"] ?>" <?php if($deviceinfo["deviceip"]==$info["id"]){ ?>selected="selected"<?php } ?>><?php echo $info["keyname"] ?></option>
+            	<?php } ?>
+				</select>
+                <span class="field-validation-valid text-danger" data-valmsg-for="keyinfoid" data-valmsg-replace="true"></span>
             </div>
         </div>
 

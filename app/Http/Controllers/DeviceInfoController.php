@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\DeviceInfo;
+use App\KeyInfo;
 
 class DeviceInfoController extends Controller
 {
@@ -17,11 +18,12 @@ class DeviceInfoController extends Controller
     }
     public function create()
     {
-		return view('deviceinfo.create');
+    	$keyinfo = KeyInfo::query()->where('enabled', '=', 1)->get();
+		return view('deviceinfo.create')->with('keyinfo',$keyinfo);
     }
     public function postcreate()
     {
-    	$inputs = \Request::only('enabled','devicename','deviceip');
+    	$inputs = \Request::only('enabled','devicename','deviceip','keyinfoid');
 		$deviceinf = new DeviceInfo;
     	if( !$inputs["enabled"] ){
 			$deviceinf->enabled = 0;
@@ -31,6 +33,7 @@ class DeviceInfoController extends Controller
     	}
 		$deviceinf->devicename = $inputs["devicename"];
 		$deviceinf->deviceip = $inputs["deviceip"];
+		$deviceinf->keyinfoid = $inputs["keyinfoid"];
 		$deviceinf->save();
 
 
@@ -38,12 +41,25 @@ class DeviceInfoController extends Controller
     }
     public function edit($id)
     {
+    	$keyinfo = KeyInfo::query()->where('enabled', '=', 1)->get();
         $deviceinf = DeviceInfo::find($id);
-		return view('deviceinfo.edit')->with('deviceinfo',$deviceinf);
+		return view('deviceinfo.edit')->with(['deviceinfo'=>$deviceinf,'keyinfo'=>$keyinfo]);
     }
     public function postedit($id)
     {
-		return redirect('/deviceinfo/');
+    	$inputs = \Request::only('enabled','devicename','deviceip','keyinfoid');
+        $deviceinf = DeviceInfo::find($id);
+    	if( !$inputs["enabled"] ){
+			$deviceinf->enabled = 0;
+    	}
+    	else{
+			$deviceinf->enabled = 1;
+    	}
+		$deviceinf->devicename = $inputs["devicename"];
+		$deviceinf->deviceip = $inputs["deviceip"];
+		$deviceinf->deviceip = $inputs["keyinfo"];
+		$deviceinf->save();
+		return view('deviceinfo.edit')->with(['deviceinfo'=>$deviceinf,'keyinfo'=>$keyinfo]);
     }
     public function delete($id)
     {

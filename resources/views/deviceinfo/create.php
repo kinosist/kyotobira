@@ -25,11 +25,11 @@
                     <li><a href="/deviceinfo">デバイス管理</a></li>
                     <li><a href="/lockinfo">錠管理</a></li>
                     <li><a href="/keyinfo">鍵管理</a></li>
-                    <li><a href="/KeyLogs">ログ</a></li>
+                    <li><a href="/keylogs">ログ</a></li>
                 </ul>
                     <ul class="nav navbar-nav navbar-right">
-        <li><a href="/Account/Register" id="registerLink">登録</a></li>
-        <li><a href="/Account/Login" id="loginLink">ログイン</a></li>
+        <li><a href="/account/register" id="registerLink">登録</a></li>
+        <li><a href="/account/login" id="loginLink">ログイン</a></li>
     </ul>
 
             </div>
@@ -41,9 +41,10 @@
 
 <h2>デバイス管理 - 登録</h2>
 
-<form action="/deviceinfo/create" method="post"><input name="_token" type="hidden" value="<?php echo csrf_token(); ?>" />    <div class="form-horizontal">
+<form action="/deviceinfo/create" method="post">
+	<input name="_token" type="hidden" value="<?php echo csrf_token(); ?>" />
+	<div class="form-horizontal">
         <hr />
-        
         <div class="form-group">
             <label class="control-label col-md-2" for="Enable">有効</label>
             <div class="col-md-10">
@@ -67,6 +68,17 @@
             <div class="col-md-10">
                 <input class="form-control text-box single-line" id="deviceip" name="deviceip" type="text" value="" />
                 <span class="field-validation-valid text-danger" data-valmsg-for="PlaceName" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="keyinfoid">鍵情報</label>
+            <div class="col-md-10">
+                <select class="form-control" id="keyinfoid" name="keyinfoid">
+            	<?php foreach( $keyinfo as $info ){ ?>
+            	<option value="<?php echo $info["id"] ?>"><?php echo $info["keyname"] ?></option>
+            	<?php } ?>
+				</select>
+                <span class="field-validation-valid text-danger" data-valmsg-for="keyinfoid" data-valmsg-replace="true"></span>
             </div>
         </div>
 
