@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>鍵管理 - 一覧 - スマート京とびら</title>
+    <title>デバイス管理 - 一覧 - スマート京とびら</title>
     <link href="/content/bootstrap.css" rel="stylesheet"/>
     <link href="/content/site.css" rel="stylesheet"/>
     <script src="/scripts/modernizr-2.6.2.js"></script>
@@ -40,24 +40,24 @@
         
 
 
-<h2>鍵管理 - 一覧</h2> 
+<h2>錠管理 - 一覧</h2>
 
 <p>
-    <a href="/keyinfo/create">Create New</a>
+    <a href="/lockinfo/create">Create New</a>
 </p>
 <table class="table">
     <tr>
         <th>
-            名前
-        </th>
-        <th>
             有効
         </th>
         <th>
-            鍵ID
+            名前
         </th>
         <th>
-            使用者名
+            場所/建物名
+        </th>
+        <th>
+            鍵の状態
         </th>
         <th>
             使用開始日
@@ -79,28 +79,27 @@
         </th>
         <th></th>
     </tr>
-
 <?php
-	foreach($keyinfolist as $info){
+	foreach($lockinfolist as $info){
 ?>
     <tr>
-        <td>
-            <?php print $info["keyname"]; ?>
-        </td>
         <td>
             <input checked="checked" class="check-box" disabled="disabled" type="checkbox" />
         </td>
         <td>
-            <?php print $info["keyid"]; ?>
+            <?php print $info["lockname"]; ?>
         </td>
         <td>
-            <?php print $info["username"]; ?>
+            <?php print $info["place"]; ?>
         </td>
         <td>
-            <?php print $info["start_service_date"]; ?>
+            0
         </td>
         <td>
-            <?php print $info["end_service_date"]; ?>
+            <?php print $info["start_use_date"]; ?>
+        </td>
+        <td>
+            <?php print $info["end_use_date"]; ?>
         </td>
         <td>
             <?php print $info["created_at"]; ?>
@@ -115,14 +114,13 @@
             
         </td>
         <td>
-            <a href="/keyinfo/edit/<?php print $info["id"]; ?>">Edit</a> |
-            <a href="/keyinfo/delete/<?php print $info["id"]; ?>">Delete</a>
+            <a href="/lockinfo/edit/<?php print $info["id"]; ?>">Edit</a> |
+            <a href="/lockinfo/delete/<?php print $info["id"]; ?>">Delete</a>
         </td>
     </tr>
 <?php
 	}
 ?>
-
 </table>
 
         <hr />
@@ -131,10 +129,11 @@
         </footer>
     </div>
 
-    <script src="/scripts/jquery-1.10.2.js"></script>
-    <script src="/scripts/bootstrap.js"></script>
-    <script src="/scripts/bootstrap-datepicker.js"></script>
-    <script src="/scripts/respond.js"></script>
-    <script src="/scripts/app.js"></script>
+<script src="/scripts/jquery-1.10.2.js"></script>
+<script src="/scripts/bootstrap.js"></script>
+<script src="/scripts/bootstrap-datepicker.js"></script>
+<script src="/scripts/respond.js"></script>
+<script src="/scripts/app.js"></script>
+
 </body>
 </html>

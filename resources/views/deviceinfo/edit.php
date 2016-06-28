@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>錠管理 - 登録 - スマート京とびら</title>
+    <title>デバイス管理 - 登録 - スマート京とびら</title>
     <link href="/content/bootstrap.css" rel="stylesheet"/>
     <link href="/content/site.css" rel="stylesheet"/>
     <script src="/scripts/modernizr-2.6.2.js"></script>
@@ -40,9 +39,9 @@
         
 
 
-<h2>錠管理 - 登録</h2>
+<h2>デバイス管理 - 編集</h2>
 
-<form action="/lockinfo/create" method="post"><input name="_token" type="hidden" value="<?php echo csrf_token(); ?>" />    <div class="form-horizontal">
+<form action="/deviceinfo/create" method="post"><input name="_token" type="hidden" value="<?php echo csrf_token(); ?>" />    <div class="form-horizontal">
         <hr />
         
         <div class="form-group">
@@ -58,40 +57,16 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="Name">名前</label>
             <div class="col-md-10">
-                <input class="form-control text-box single-line" data-val="true" data-val-required="名前は必須です。" id="Name" name="lockname" type="text" value="" />
+                <input class="form-control text-box single-line" data-val="true" data-val-required="名前は必須です。" id="Name" name="devicename" type="text" value="" />
                 <span class="field-validation-valid text-danger" data-valmsg-for="Name" data-valmsg-replace="true"></span>
             </div>
         </div>
 
         <div class="form-group">
-            <label class="control-label col-md-2" for="PlaceName">場所/建物名</label>
+            <label class="control-label col-md-2" for="PlaceName">IPアドレス</label>
             <div class="col-md-10">
-                <input class="form-control text-box single-line" id="PlaceName" name="place" type="text" value="" />
+                <input class="form-control text-box single-line" id="deviceip" name="deviceip" type="text" value="" />
                 <span class="field-validation-valid text-danger" data-valmsg-for="PlaceName" data-valmsg-replace="true"></span>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label col-md-2" for="Status">鍵の状態</label>
-            <div class="col-md-10">
-                <input class="form-control text-box single-line" data-val="true" data-val-number="フィールド 鍵の状態 には数字を指定してください。" data-val-required="鍵の状態は必須です。" id="Status" name="lockstatus" type="number" value="" />
-                <span class="field-validation-valid text-danger" data-valmsg-for="Status" data-valmsg-replace="true"></span>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label col-md-2" for="StartDate">使用開始日</label>
-            <div class="col-md-10">
-                <input class="form-control text-box single-line" data-val="true" data-val-date="フィールド 使用開始日 は日付である必要があります。" id="StartDate" name="start_use_date" type="datetime" value="" />
-                <span class="field-validation-valid text-danger" data-valmsg-for="StartDate" data-valmsg-replace="true"></span>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label col-md-2" for="EndDate">使用終了日</label>
-            <div class="col-md-10">
-                <input class="form-control text-box single-line" data-val="true" data-val-date="フィールド 使用終了日 は日付である必要があります。" id="EndDate" name="end_use_date" type="datetime" value="" />
-                <span class="field-validation-valid text-danger" data-valmsg-for="EndDate" data-valmsg-replace="true"></span>
             </div>
         </div>
 
