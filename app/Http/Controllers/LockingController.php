@@ -51,7 +51,6 @@ class LockingController extends Controller
 		$buf = "quit\n";
 		socket_write($sock,$buf,strlen($buf));
 		socket_close($sock);
-		KeyLog::
 		//recordLog("12345","ハウス",1,"00002","test1","35.009983、135.759547","木下");
 	}
 

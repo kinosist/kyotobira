@@ -161,7 +161,7 @@ return [
     /*
      *  If true smarty will enable security `$smarty->enableSecurity()`
      */
-//    'enable_security'                     => false,
+    'enable_security'                     => false,
 
     /*
      * The following settings will be applied to the smarty security policy object `$smarty->security_policy`
