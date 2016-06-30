@@ -18,12 +18,11 @@ class DeviceInfoController extends Controller
     }
     public function create()
     {
-    	$keyinfo = KeyInfo::query()->where('enabled', '=', 1)->get();
 		return view('deviceinfo.create')->with('keyinfo',$keyinfo);
     }
     public function postcreate()
     {
-    	$inputs = \Request::only('enabled','devicename','deviceip','keyinfoid');
+    	$inputs = \Request::only('enabled','devicename','deviceip');
 		$deviceinf = new DeviceInfo;
     	if( !$inputs["enabled"] ){
 			$deviceinf->enabled = 0;
@@ -33,7 +32,6 @@ class DeviceInfoController extends Controller
     	}
 		$deviceinf->devicename = $inputs["devicename"];
 		$deviceinf->deviceip = $inputs["deviceip"];
-		$deviceinf->keyinfoid = $inputs["keyinfoid"];
 		$deviceinf->save();
 
 
@@ -41,13 +39,12 @@ class DeviceInfoController extends Controller
     }
     public function edit($id)
     {
-    	$keyinfo = KeyInfo::query()->where('enabled', '=', 1)->orderby("id","asc")->get();
         $deviceinf = DeviceInfo::find($id);
 		return view('deviceinfo.edit')->with(['deviceinfo'=>$deviceinf,'keyinfo'=>$keyinfo]);
     }
     public function postedit($id)
     {
-    	$inputs = \Request::only('enabled','devicename','deviceip','keyinfoid');
+    	$inputs = \Request::only('enabled','devicename','deviceip');
         $deviceinf = DeviceInfo::find($id);
     	if( !$inputs["enabled"] ){
 			$deviceinf->enabled = 0;
@@ -57,7 +54,6 @@ class DeviceInfoController extends Controller
     	}
 		$deviceinf->devicename = $inputs["devicename"];
 		$deviceinf->deviceip = $inputs["deviceip"];
-		$deviceinf->keyinfoid = $inputs["keyinfoid"];
 		$deviceinf->save();
     	$keyinfo = KeyInfo::query()->where('enabled', '=', 1)->get();
 		return view('deviceinfo.edit')->with(['deviceinfo'=>$deviceinf,'keyinfo'=>$keyinfo]);

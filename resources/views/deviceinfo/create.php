@@ -70,17 +70,6 @@
                 <span class="field-validation-valid text-danger" data-valmsg-for="PlaceName" data-valmsg-replace="true"></span>
             </div>
         </div>
-        <div class="form-group">
-            <label class="control-label col-md-2" for="keyinfoid">鍵情報</label>
-            <div class="col-md-10">
-                <select class="form-control" id="keyinfoid" name="keyinfoid">
-            	<?php foreach( $keyinfo as $info ){ ?>
-            	<option value="<?php echo $info["id"] ?>"><?php echo $info["keyname"] ?></option>
-            	<?php } ?>
-				</select>
-                <span class="field-validation-valid text-danger" data-valmsg-for="keyinfoid" data-valmsg-replace="true"></span>
-            </div>
-        </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
