@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\LockInfo;
+use App\DeviceInfo;
 
 class LockInfoController extends Controller
 {
@@ -20,7 +21,8 @@ class LockInfoController extends Controller
     public function create()
     {
         //
-		return view('lockinfo.create');
+        $devlist = DeviceInfo::getUnused();
+		return view('lockinfo.create')->with('device_list',$devlist);
     }
     public function postcreate()
     {

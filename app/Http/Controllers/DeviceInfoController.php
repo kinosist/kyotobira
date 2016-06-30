@@ -18,7 +18,7 @@ class DeviceInfoController extends Controller
     }
     public function create()
     {
-		return view('deviceinfo.create')->with('keyinfo',$keyinfo);
+		return view('deviceinfo.create');
     }
     public function postcreate()
     {
@@ -40,7 +40,7 @@ class DeviceInfoController extends Controller
     public function edit($id)
     {
         $deviceinf = DeviceInfo::find($id);
-		return view('deviceinfo.edit')->with(['deviceinfo'=>$deviceinf,'keyinfo'=>$keyinfo]);
+		return view('deviceinfo.edit')->with(['deviceinfo'=>$deviceinf]);
     }
     public function postedit($id)
     {

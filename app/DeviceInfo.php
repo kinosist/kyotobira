@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 class DeviceInfo extends Model
 {
@@ -12,8 +13,23 @@ class DeviceInfo extends Model
 	
 	// 未使用のdeviceのみを一覧で取得
 	public function getUnused(){
-		$this->quiery()->
-		
+		return DB::select('
+			select
+			t1.id,
+			t1.devicename
+			from
+			( select
+			`deviceinfos`.`id`,
+			`deviceinfos`.`devicename`,
+			`lockinfos`.`id` as lockid
+			from
+			`deviceinfos`
+			left join `lockinfos` on `deviceinfos`.`id` = `lockinfos`.`deviceid`
+			) t1
+			where
+			lockid is null
+			order by t1.id asc
+		');
 	}
 	
 }

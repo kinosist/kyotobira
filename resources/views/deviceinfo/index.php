@@ -40,7 +40,7 @@
         
 
 
-<h2>錠管理 - 一覧</h2>
+<h2>デバイス管理 - 一覧</h2>
 
 <p>
     <a href="/deviceinfo/create">Create New</a>
