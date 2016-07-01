@@ -12,8 +12,8 @@ class DeviceInfo extends Model
 	protected $dates = ['created_at','updated_at'];
 	
 	// 未使用のdeviceのみを一覧で取得
-	public static function getUnused(){
-		return DB::select('
+	public static function getUnused($id = ""){
+		$sql = "
 			select
 			t1.id,
 			t1.devicename
@@ -26,10 +26,16 @@ class DeviceInfo extends Model
 			`deviceinfos`
 			left join `lockinfos` on `deviceinfos`.`id` = `lockinfos`.`deviceid`
 			) t1
-			where
-			lockid is null
-			order by t1.id asc
-		');
+			where 
+		";
+		if( !$id ){
+			$sql .= " lockid is null";
+		}
+		else{
+			$sql .= " ( lockid is null OR t1.id = $id )";
+		}
+		$sql .= "	order by t1.id asc";
+		return DB::select($sql);
 	}
 	
 }

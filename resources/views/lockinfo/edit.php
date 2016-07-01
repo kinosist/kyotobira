@@ -80,6 +80,17 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="Status">鍵の状態</label>
             <div class="col-md-10">
+				<select class="form-control" id="Status" name="deviceid">
+					<?php foreach($device_list as $device){	?>
+					<option value="<?php echo $device->id; ?>" <?php if($device->id==$lockinfo["deviceid"]){ ?>selected="selected"<?php } ?>><?php echo $device->devicename; ?></option>
+					<?php }	?>
+				</select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Status">鍵の状態</label>
+            <div class="col-md-10">
 				<select class="form-control" id="Status" name="lockstatus">
 					<option value="1" <?php if($lockinfo["lockstatus"]==1){ ?>selected="selected"<?php } ?>>解錠</option>
 					<option value="2" <?php if($lockinfo["lockstatus"]==2){ ?>selected="selected"<?php } ?>>施錠</option>
