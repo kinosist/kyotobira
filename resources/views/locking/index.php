@@ -26,7 +26,7 @@
 	<input type="hidden" id="flg" name="flg" value="<?php print $lock_status; ?>">
 	<div class="text-center">
 		<p class="resizeimage">
-			<img id="btn-img" src="images/btn-close.png" onclick="submit()" />
+			<img id="btn-img" src="/images/btn-close.png" onclick="submit()" />
 		</p>
 	</div>
 	<div class="text-center">
