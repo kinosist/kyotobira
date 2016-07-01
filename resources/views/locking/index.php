@@ -6,6 +6,7 @@
     <title>スマート京とびら</title>
     <link href="/content/bootstrap.css" rel="stylesheet"/>
     <link href="/content/site.css" rel="stylesheet"/>
+    <script src="/scripts/jquery-1.10.2.js"></script>
     <script src="/scripts/modernizr-2.6.2.js"></script>
     <meta name="viewport" content="width=device-width" />
     <title>Button</title>
@@ -40,11 +41,11 @@
 $(document).ready(function(){
 	if( $('#flg').val()=="1" ){
 		$('#submit-btn').val("ON");
-		$('#btn-img').attr("src","images/btn-open.png");
+		$('#btn-img').attr("src","/images/btn-open.png");
 	}
 	else{
 		$('#submit-btn').val("OFF");
-		$('#btn-img').attr("src","images/btn-close.png");
+		$('#btn-img').attr("src","/images/btn-close.png");
 	}
 });
 
