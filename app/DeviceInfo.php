@@ -12,7 +12,7 @@ class DeviceInfo extends Model
 	protected $dates = ['created_at','updated_at'];
 	
 	// 未使用のdeviceのみを一覧で取得
-	public function getUnused(){
+	public static function getUnused(){
 		return DB::select('
 			select
 			t1.id,

@@ -76,6 +76,17 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="Status">鍵の状態</label>
             <div class="col-md-10">
+				<select class="form-control" id="Status" name="deviceid">
+					<?php foreach($devlist as $device){	?>
+					<option value="<?php echo $device["id"]; ?>"><?php echo $device["devicename"]; ?></option>
+					<?php }	?>
+				</select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Status">鍵の状態</label>
+            <div class="col-md-10">
 				<select class="form-control" id="Status" name="lockstatus">
 					<option value="1">解錠</option>
 					<option value="2">施錠</option>
