@@ -22,11 +22,13 @@ class LockingController extends Controller
     	
     	$inputs = \Request::only('keyid');
     	// 設定された鍵情報とkeyidが一致してるかの確認
-		$device = KeyInfo::getDeviceIp($inputs["keyid"]));
-    	var_dump($device);exit;
-    	$this->lockingRaspberryPI(1);
-    	
-    	
+		$device = KeyInfo::getDeviceIp($inputs["keyid"]);
+		if($device[0]->deviceip){
+	    	$this->lockingRaspberryPI($device[0]->deviceip,1);
+		}
+		else{
+			$error["message"] = "有効なkeyidじゃないよ";
+		}
         return view('locking.index')->with('lock_status',"2");
     }
 
@@ -34,21 +36,22 @@ class LockingController extends Controller
     {
     	$inputs = \Request::only('keyid');
     	// 設定された鍵情報とkeyidが一致してるかの確認
-		$device = KeyInfo::getDeviceIp($inputs["keyid"]));
-		
-		
-    	$this->lockingRaspberryPI(2);
-    	
-    	
+		$device = KeyInfo::getDeviceIp($inputs["keyid"]);
+		if($device[0]->deviceip){
+	    	$this->lockingRaspberryPI($device[0]->deviceip,2);
+		}
+		else{
+			$error["message"] = "有効なkeyidじゃないよ";
+		}
         return view('locking.index')->with('lock_status',"1");
     }
 
-	private function lockingRaspberryPI($lock){
+	private function lockingRaspberryPI($deviceip,$lock){
 		if( !($sock = socket_create(AF_INET, SOCK_STREAM, SOL_TCP )) ){
 			print "socket create error";
 			exit;
 		}
-		if(!socket_connect($sock, "192.168.201.13", 60431)){
+		if(!socket_connect($sock, $deviceip, 60431)){
 			print "socket connect error";
 			exit;
 		}

@@ -14,18 +14,20 @@ class KeyInfo extends Model
     {
         return $this->hasOne('App\LockInfo', 'id', 'lockinfoid');
     }
-    piblic static function getDeviceIp($keyid){
+    public static function getDeviceIp($keyid){
 		$sql = "
 	    	select
+	    	deviceinfos.id,
 			deviceinfos.deviceip
 			from
 			keyinfos
 			inner join lockinfos ON keyinfos.lockinfoid = lockinfos.id AND lockinfos.enabled = 1
 			inner join deviceinfos ON lockinfos.deviceid = deviceinfos.id AND deviceinfos.enabled = 1
 			where
-			keyinfos.keyid = ?
+			keyinfos.keyid = '".$keyid."'
 			AND keyinfos.enabled = 1
 		";
-		return DB::select($sql[$keyid]);
+		
+		return DB::select($sql);
     }
 }

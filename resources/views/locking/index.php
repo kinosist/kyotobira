@@ -12,7 +12,7 @@
     <title>Button</title>
     <style>
         body {
-            background-image: url(images/bg.png);
+            background-image: url(/images/bg.png);
         }
 		.block-center {
 			display: inline-block;
@@ -20,7 +20,7 @@
 		}		
     </style>
 </head>
-<body style="background-image: url('images/bg.png')">
+<body style="background-image: url('/images/bg.png')">
 <form action="/locking/<?php if( $lock_status==1 ){print "on";} else{print "off";}?>" method="POST">
 	<input name="_token" type="hidden" value="<?php echo csrf_token(); ?>" />
 	<input type="hidden" id="flg" name="flg" value="<?php print $lock_status; ?>">
@@ -31,7 +31,7 @@
 	</div>
 	<div class="text-center">
 		<div class="block-center">
-			<input type="text" name="key-no" class="form-control text-box single-line" placeholder="鍵Noを入力" />
+			<input type="text" name="keyid" class="form-control text-box single-line" placeholder="鍵Noを入力" />
 			<input type="submit" value="使う" class="btn btn-info" />
 		</div>
 	</div>
