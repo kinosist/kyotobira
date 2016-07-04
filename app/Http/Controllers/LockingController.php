@@ -22,9 +22,8 @@ class LockingController extends Controller
     	
     	$inputs = \Request::only('keyid');
     	// 設定された鍵情報とkeyidが一致してるかの確認
-		$key = KeyInfo::query()->where('keyid',$inputs["keyid"])->get();
-    	var_dump($key["deviceinf"]);exit;
-    	
+		$device = KeyInfo::getDeviceIp($inputs["keyid"]));
+    	var_dump($device);exit;
     	$this->lockingRaspberryPI(1);
     	
     	
@@ -35,6 +34,7 @@ class LockingController extends Controller
     {
     	$inputs = \Request::only('keyid');
     	// 設定された鍵情報とkeyidが一致してるかの確認
+		$device = KeyInfo::getDeviceIp($inputs["keyid"]));
 		
 		
     	$this->lockingRaspberryPI(2);
