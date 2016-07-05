@@ -8,5 +8,7 @@ class KeyLog extends Model
 {
     //
     protected $table = 'keylogs';
-    
+    public function keyinfo(){
+        return $this->hasOne('App\KeyInfo', 'keyid', 'keyid');
+    }
 }

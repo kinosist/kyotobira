@@ -23,8 +23,12 @@ class LockingController extends Controller
     	$inputs = \Request::only('keyid');
     	// 設定された鍵情報とkeyidが一致してるかの確認
 		$device = KeyInfo::getDeviceIp($inputs["keyid"]);
-		if($device[0]->deviceip){
+		if($device){
 	    	$this->lockingRaspberryPI($device[0]->deviceip,1);
+			$keylog = new KeyLog;
+			$keylog->keyid = $inputs["keyid"];
+			$keylog->lock_status = 1;
+			$keylog->save();
 		}
 		else{
 			$error["message"] = "有効なkeyidじゃないよ";
@@ -37,8 +41,12 @@ class LockingController extends Controller
     	$inputs = \Request::only('keyid');
     	// 設定された鍵情報とkeyidが一致してるかの確認
 		$device = KeyInfo::getDeviceIp($inputs["keyid"]);
-		if($device[0]->deviceip){
+		if($device){
 	    	$this->lockingRaspberryPI($device[0]->deviceip,2);
+			$keylog = new KeyLog;
+			$keylog->keyid = $inputs["keyid"];
+			$keylog->lock_status = 2;
+			$keylog->save();
 		}
 		else{
 			$error["message"] = "有効なkeyidじゃないよ";

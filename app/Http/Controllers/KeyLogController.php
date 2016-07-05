@@ -20,11 +20,14 @@ class KeyLogController extends Controller
         $keyid = "";
         $username = "";
         $lock_status = "";
-		return view('keylog.index')->with(['loglist'=>$loglist,'keyname'=>$keyname,'keyid'=>$keyid,'username'=>$username,'lock_status'=>$lock_status]);
+		return view('keylog.index')->with('loglist',$loglist);
     }
     public function search(Request $request)
     {
         //
+    	$inputs = \Request::only('enabled','keyid','keyname','username','lockinfoid','start_service_date','end_service_date');
+
+
         $keyname = $request->input('keyname');
         $keyid = $request->input('keyid');
         $username = $request->input('username');
@@ -47,7 +50,7 @@ class KeyLogController extends Controller
 		}
 
 		$loglist = $query->paginate(30);
-		return view('keylog.index')->with(['loglist'=>$loglist,'keyname'=>$keyname,'keyid'=>$keyid,'username'=>$username,'lock_status'=>$lock_status]);
+		return view('keylog.index')->with('loglist',$loglist);
     }
     
     public function create()
@@ -73,7 +76,7 @@ class KeyLogController extends Controller
         $keyid = "";
         $username = "";
         $lock_status = "";
-		return view('keylog.index')->with(['loglist'=>$loglist,'keyname'=>$keyname,'keyid'=>$keyid,'username'=>$username,'lock_status'=>$lock_status]);
+		return view('keylog.index')->with('loglist',$loglist);
     }
 
 

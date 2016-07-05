@@ -73,16 +73,10 @@
             場所
         </th>
         <th>
-            更新日
-        </th>
-        <th>
             登録日
         </th>
         <th>
-            更新者
-        </th>
-        <th>
-            登録者
+            更新日
         </th>
         <th></th>
     </tr>
@@ -97,7 +91,7 @@
             <?php print $log["keyid"]; ?>
         </td>
         <td>
-            <?php print $log["username"]; ?>
+            <?php print $log["keyinfo"]["username"]; ?>
         </td>
         <td>
             <?php print ( $log["lock_status"]==1 ? "開" : "閉"); ?>
@@ -106,16 +100,10 @@
             <?php print $log["place"]; ?>
         </td>
         <td>
-            <?php print $log["regdate"]; ?>
+            <?php print $log["created_at"]; ?>
         </td>
         <td>
-            <?php print $log["upddate"]; ?>
-        </td>
-        <td>
-            <?php print $log["reg_person"]; ?>
-        </td>
-        <td>
-            <?php print $log["upd_person"]; ?>
+            <?php print $log["updated_at"]; ?>
         </td>
         <td>
             <a class="dellink" href="/keylog/delete/<?php print $log["id"]; ?>">Delete</a>
