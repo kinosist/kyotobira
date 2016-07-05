@@ -42,14 +42,14 @@
 <h2>ログ管理 - 一覧</h2>
 
 <form action="/keylog/search" class="well form-inline" method="post"><input name="_token" type="hidden" value="<?php echo csrf_token(); ?>" />
-    <input type="text" name="keyname" class="form-control" placeholder="名前" value="<?php print $keyname; ?>" />
-    <input type="text" name="keyid" class="form-control" placeholder="鍵ID" value="<?php print $keyid; ?>" />
-    <input type="text" name="username" class="form-control" placeholder="使用者名" value="<?php print $username; ?>" />
+    <input type="text" name="keyname" class="form-control" placeholder="名前" value="<?php print $inputs["keyname"]; ?>" />
+    <input type="text" name="keyid" class="form-control" placeholder="鍵ID" value="<?php print $inputs["keyid"]; ?>" />
+    <input type="text" name="username" class="form-control" placeholder="使用者名" value="<?php print $inputs["username"]; ?>" />
     <label class="control-label" for="MaterialClassificationId">鍵の状態</label>
     <select class="form-control" id="MaterialClassificationId" name="lock_status">
-    	<option value="" <?php if( trim($lock_status)=="" ): ?>selected=""<?php endif; ?>></option>
-        <option value="1" <?php if( trim($lock_status)==1 ): ?>selected=""<?php endif; ?>>開</option>
-        <option value="2" <?php if( trim($lock_status)==2 ): ?>selected=""<?php endif; ?>>閉</option>
+    	<option value="" <?php if( trim($inputs["lock_status"])=="" ): ?>selected=""<?php endif; ?>></option>
+        <option value="1" <?php if( trim($inputs["lock_status"])==1 ): ?>selected=""<?php endif; ?>>開</option>
+        <option value="2" <?php if( trim($inputs["lock_status"])==2 ): ?>selected=""<?php endif; ?>>閉</option>
     </select>
     <input type="submit" value="検索" />
 </form>
